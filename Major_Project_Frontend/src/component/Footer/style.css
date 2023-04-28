@@ -1,0 +1,28 @@
+.footer{
+    background-color:black ;
+    height: 69px;
+    color: white;
+    text-align: center;
+    display: flex;
+    padding-left: 260px;
+}
+.footer h3{
+    margin-left: 250px;
+    margin-top: 20px;
+}
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+    color: white;
+    height: 310x;
+}
+.footer a{
+    padding: 15px;
+}
+.footer a:hover{
+    color: aqua;
+    font-size:19px;
+    }
+
+.singleCol{
+    padding-top: 20px;
+    padding-left:350px;
+}

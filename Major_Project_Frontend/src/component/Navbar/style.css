@@ -1,0 +1,40 @@
+
+.nav{
+    height:10vh;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+.nav ul {
+    display:flex;
+    margin: 25px ;
+    list-style-type : none;  
+}
+.nav a{
+    color:white;
+    text-decoration: none;
+    text-align: center;
+    margin:30px;
+    font-size:20px;
+    font-style:italic;
+}
+.nav a:hover{
+    color: aqua;
+    font-size: 19px;
+    }
+.titlename{
+    color: white;
+    margin-top:0px;
+}
+.titleimg{
+  margin-right:30px;
+  margin-top: 0px;
+}
+.haha{
+   margin-left:700px;
+}
+.haha0{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 30px;
+}
