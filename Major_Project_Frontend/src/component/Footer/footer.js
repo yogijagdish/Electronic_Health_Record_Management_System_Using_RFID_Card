@@ -6,7 +6,7 @@ const Footer=()=> {
   return (
       <div className="footer">
          <div className="write">
-        <h3>© 2022 Copyright : Smart Health</h3>
+        <h4>© 2022 Copyright : Smart Health</h4>
         </div>
 
         <div className ="singleCol social-media-icons-white">

@@ -25,3 +25,11 @@
 .form-group{
     margin-bottom:10px;
 }
+.forgotpassword{
+    font-size: 17px;
+    text-align: center;
+    color:green;
+}
+.nav-link{
+    text-align: center;
+}

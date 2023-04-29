@@ -28,13 +28,17 @@ const loginpage = (props) => {
                     Please Enter your Password
                 </div>
         </div>
-        <div className="form-group">
-                <input type="checkbox" id='checkbox'/> 
+        {/* <div className="form-group">
+                <input type="checkbox" id='checkbox' />
                 <label htmlFor='checkbox'>Remember me</label>
-        </div>
+
+        </div> */}
         <Link className="nav-link active" aria-current="page" to={props.newpage}>
-                  <h2> <button className="btn btn-success">Log In</button></h2>
+                  <h2> <button className="btn btn-success">Sign in </button></h2>
                 </Link>
+                <div className="forgotpassword">
+                <Link className="nav-link active" aria-current="page" to ='/forgot1'> <p>Forgotten password</p></Link>
+                </div>
 
             </div>
             </form>
