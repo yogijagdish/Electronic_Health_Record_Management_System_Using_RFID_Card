@@ -4,13 +4,13 @@
 .card1{
     width:50vh;
     margin-left: 30px;
-    margin-top: 80px;
+    margin-top: 120px;
     padding: 0px 10px;
 }
 .card1 img{
   padding-top: 12px;
   padding-left:1px;
-  width:23vw;
+  width:21vw;
 }
 .card3 {
     padding-top:20px;
@@ -21,7 +21,7 @@
 }
 .card2{
  padding-left: 20px;
-  height: 290px;
+  height: 250px;
   width: 45vh;
 }
 .card1:hover{
@@ -30,7 +30,7 @@
   box-shadow: 5px 10px 8px 10px #888888;
 }
 .btn-dark{
-  font-size:20px;
+  font-size:15px;
 }
 /* button{
     height:35px;
