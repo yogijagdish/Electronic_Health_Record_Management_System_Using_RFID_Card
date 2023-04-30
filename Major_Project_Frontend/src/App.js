@@ -10,6 +10,7 @@ import Doctorpanel from './component/Doctor/doctorpanel';
 import Patientpanel from './component/Patient/patientpanel';
 import Adminpanel from './component/Admin/adminpanel'
 import Forgot1 from './component/Forgotpassword/forgot1'
+import Registration from './component/Admin/registration'
 import {
   BrowserRouter,
   Routes,
@@ -32,6 +33,7 @@ const App =() =>{
         <Route exact path="/patientpanel" element = {<Patientpanel/>}/>
         <Route exact path="/adminpanel" element = {<Adminpanel/>}/>
         <Route exact path = '/forgot1' element = {<Forgot1/>}/>
+        <Route exact path = '/registration' element = {<Registration/>}/>
         </Routes>
         <Footer/>
         </BrowserRouter>

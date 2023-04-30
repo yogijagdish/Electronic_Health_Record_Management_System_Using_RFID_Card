@@ -39,7 +39,7 @@ const adminpanel = () => {
           </p>
         
         <div className="doctorcard">
-          <Link to = "/"> <Doctorcard picture = {R1} name = "New Registration"  /> </Link>
+          <Link to = "/registration"> <Doctorcard picture = {R1} name = "New Registration"  /> </Link>
           <Link to = "/"> <Doctorcard picture = {A1} name = "Add Doctor" /> </Link>
           <Link to = "/"> <Doctorcard picture = {I1}  name = "Information"/> </Link>
            
