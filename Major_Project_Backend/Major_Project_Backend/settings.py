@@ -84,8 +84,12 @@ WSGI_APPLICATION = "Major_Project_Backend.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        'USER': 'jagdish',
+        'PASSWORD': 'Jagdish@1234',
+        'NAME': 'HospitalDatabase',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -133,9 +137,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 ### cors allowed origin
 CORS_ALLOWED_ORIGINS = [
-    "http:127.0.0.1:3001",
-    "http:localhost:3001"
+    "http://127.0.0.1:3001",
+    "http://localhost:3001"
 ]
+
+AUTH_USER_MODEL = "authentication.User"
+
 
 ### default authentication class should use jwt authentication
 REST_FRAMEWORK = {
