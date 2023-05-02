@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const adminlogin = () => {
   return (
     <div className='Adminlogin'>
-        {/* <Login name = "Admin" newpage = '/adminpanel'/> */}
+        {/* <Login name = "Admin" newpage = '/adminpanel' details = "adminlogin"  /> */}
 
         <div className="login">
         <form className='need-validation'>
@@ -29,11 +29,6 @@ const adminlogin = () => {
                     Please Enter your Password
                 </div>
         </div>
-        {/* <div className="form-group">
-                <input type="checkbox" id='checkbox' />
-                <label htmlFor='checkbox'>Remember me</label>
-
-        </div> */}
         <Link className="nav-link active" aria-current="page" to='/adminpanel'>
                   <h2> <button className="btn btn-success">Sign in </button></h2>
                 </Link>

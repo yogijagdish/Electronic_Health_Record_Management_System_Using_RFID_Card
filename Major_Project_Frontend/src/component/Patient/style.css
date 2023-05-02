@@ -6,3 +6,106 @@
     background-image: url(/src/component/images/l3.png);
     height:81vh;
 }
+.Patientpanel1 h2{
+    text-align: center;
+    padding-top: 20px;
+    font-weight:700;
+}
+.Patientpanel2{
+   height:70vh;
+   width: 88vw;
+   background-color:white;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 30px;
+   opacity: 94%;
+}
+.Patientpanel2 img{
+   width: 100px;
+   margin: 30px 80px;
+}
+.Patientpanel3{
+   margin: -19px 70px;
+   font-size:15px;
+   font-weight:600;
+   color: black;
+   font-weight:700;
+}
+.p234{
+   display:flex;
+}
+.Patientpanel4 h2{
+   margin: -160px 200px;
+   text-align: center;
+   font-weight:700; 
+   color: black;
+}
+.Patientpanel5{
+   width: 50vw;
+   margin: -120px 200px;
+   margin-left: 350px;
+}
+.Patientpanel5 p{
+   color: black;
+   font-weight: 500;
+
+}
+.doctorcard{
+   margin-left: -400px;
+   margin-top: 100px;
+   display: flex;
+   padding-left: 200px;
+}
+.dcard{
+   width:15vw;
+   margin-left: 60px;
+   border:3px solid black;
+
+}
+.card img{
+   width:10vw;
+   height:17vh;
+   margin: auto;
+}
+.card p{
+   font-size: 20px;
+   text-align: center;
+   font-weight:700;
+   margin-bottom:10px;
+}
+
+  /* CSS for Aboutpatient */
+  .Aboutpatient{
+    background-image: url(/src/component/images/l3.png);
+    height:81vh;
+    padding-top: 40px;
+  }
+  .Aboutpatient1{
+    width: 50vw;
+    background-color:#F6E0F6;
+    opacity:80%;  
+    height: 70vh;
+    margin: auto;
+    border: 2px solid black;
+    border-radius:30PX
+
+  }
+  .Aboutpatient1 h2{
+      color:black;
+      font-weight: 700;
+      text-align: center;
+      padding-top: 10px;
+  }
+  .Aboutpatient2 img{
+    width:6vw;
+    margin: 10px 300px;
+    border: 2px solid black;
+    border-radius: 7px;
+  }
+  .Aboutpatient3 {
+    color: black;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 10px 230px;
+    width: 30vw;
+  }

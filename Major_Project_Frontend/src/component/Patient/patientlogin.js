@@ -6,7 +6,7 @@ const patientlogin = () => {
   return (
     <div className='Patientlogin'>
 
-        {/* <Login name = "Patient" newpage = '/patientpanel'/> */}
+        {/* <Login name = "Patient" newpage = '/patientpanel' details = "Patientlogin"  /> */}
 
         <div className="login">
         <form className='need-validation'>
@@ -30,11 +30,6 @@ const patientlogin = () => {
                     Please Enter your Password
                 </div>
         </div>
-        {/* <div className="form-group">
-                <input type="checkbox" id='checkbox' />
-                <label htmlFor='checkbox'>Remember me</label>
-
-        </div> */}
         <Link className="nav-link active" aria-current="page" to='/patientpanel'>
                   <h2> <button className="btn btn-success">Sign in </button></h2>
                 </Link>

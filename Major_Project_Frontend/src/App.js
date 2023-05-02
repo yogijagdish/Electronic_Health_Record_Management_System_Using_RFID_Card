@@ -8,9 +8,11 @@ import Patient from './component/Patient/patientlogin';
 import Admin from './component/Admin/adminlogin';
 import Doctorpanel from './component/Doctor/doctorpanel';
 import Patientpanel from './component/Patient/patientpanel';
-import Adminpanel from './component/Admin/adminpanel'
-import Forgot1 from './component/Forgotpassword/forgot1'
-import Registration from './component/Admin/registration'
+import Adminpanel from './component/Admin/adminpanel';
+import Forgot1 from './component/Forgotpassword/forgot1';
+import Registration from './component/Admin/registration';
+import Aboutpatient from './component/Patient/aboutpatient';
+// import Protected from './component/Protected/protected'
 import {
   BrowserRouter,
   Routes,
@@ -34,6 +36,7 @@ const App =() =>{
         <Route exact path="/adminpanel" element = {<Adminpanel/>}/>
         <Route exact path = '/forgot1' element = {<Forgot1/>}/>
         <Route exact path = '/registration' element = {<Registration/>}/>
+        <Route exact path = '/aboutpatient' element = {<Aboutpatient/>}/>
         </Routes>
         <Footer/>
         </BrowserRouter>

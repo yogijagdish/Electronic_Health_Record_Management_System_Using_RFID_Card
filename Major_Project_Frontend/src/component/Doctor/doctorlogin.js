@@ -1,11 +1,25 @@
-import React from 'react'
 import './style.css'
 import { Link } from "react-router-dom";
+import React, { useEffect } from 'react'
+// import { useNavigate } from 'react-router-dom'
 // import Login from '../Login/login';
-const doctorlog = () => {
+const Doctorlog = () => {
+
+// const  navigate = useNavigate()
+
+//   const loginHandle = ()=>{
+//    localStorage.setItem('login', true)
+//     navigate('/doctorpanel') 
+//   }
+//   useEffect(()=>{
+//     let login = localStorage.getItem('login')
+//     if(login){
+//       navigate('/doctorpanel')
+//     }
+//     },[])
   return (
     <div className='Doctorlogin'>
-        {/* <Login name = "Doctor" newpage = '/doctorpanel' /> */}
+        {/* <Login name = "Doctor" newpage = '/doctorpanel' details = "doctorlogin" /> */}
 
         <div className="login">
         <form className='need-validation'>
@@ -29,11 +43,6 @@ const doctorlog = () => {
                     Please Enter your Password
                 </div>
         </div>
-        {/* <div className="form-group">
-                <input type="checkbox" id='checkbox' />
-                <label htmlFor='checkbox'>Remember me</label>
-
-        </div> */}
         <Link className="nav-link active" aria-current="page" to='/doctorpanel'>
                   <h2> <button className="btn btn-success">Sign in </button></h2>
                 </Link>
@@ -49,4 +58,4 @@ const doctorlog = () => {
   )
 }
 
-export default doctorlog;
+export default Doctorlog;

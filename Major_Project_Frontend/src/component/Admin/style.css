@@ -18,7 +18,7 @@
    margin-left: auto;
    margin-right: auto;
    border-radius: 30px;
-   opacity: 80%;
+   opacity: 94%;
 }
 .Adminpanel2 img{
    width: 100px;
@@ -46,55 +46,6 @@
    margin-left: 350px;
 }
 .Adminpanel5 p{
-   color: black;
-   font-weight: 500;
-
-}
-.doctorcard{
-   margin-left: -400px;
-   margin-top: 100px;
-   display: flex;
-   padding-left: 200px;
-}.Doctorpanel1 h2{
-    text-align: center;
-    padding-top: 20px;
-    font-weight:700;
-}
-.Doctorpanel2{
-   height:70vh;
-   width: 88vw;
-   background-color:white;
-   margin-left: auto;
-   margin-right: auto;
-   border-radius: 30px;
-   opacity: 80%;
-}
-.Doctorpanel2 img{
-   width: 100px;
-   margin: 30px 80px;
-}
-.Doctorpanel3{
-   margin: -19px 70px;
-   font-size:15px;
-   font-weight:600;
-   color: black;
-   font-weight:700;
-}
-.d234{
-   display:flex;
-}
-.Doctorpanel4 h2{
-   margin: -160px 200px;
-   text-align: center;
-   font-weight:700; 
-   color: black;
-}
-.Doctorpanel5{
-   width: 50vw;
-   margin: -120px 200px;
-   margin-left: 350px;
-}
-.Doctorpanel5 p{
    color: black;
    font-weight: 500;
 

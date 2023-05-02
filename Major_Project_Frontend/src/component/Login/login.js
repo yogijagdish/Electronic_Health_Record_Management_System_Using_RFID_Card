@@ -2,6 +2,9 @@ import React from 'react'
  import './style.css'
  import { Link } from "react-router-dom";
 const loginpage = (props) => {
+  const Buttonclicked = ()=>{
+    console.log( `the button was clicked is ${props.details}`)
+  }
 
   return (
     <>
@@ -34,7 +37,7 @@ const loginpage = (props) => {
 
         </div> */}
         <Link className="nav-link active" aria-current="page" to={props.newpage}>
-                  <h2> <button className="btn btn-success">Sign in </button></h2>
+                  <h2> <button className="btn btn-success" onClick={()=> Buttonclicked()}>Sign in </button></h2>
                 </Link>
                 <div className="forgotpassword">
                 <Link className="nav-link active" aria-current="page" to ='/forgot1'> <p>Forgotten password</p></Link>
