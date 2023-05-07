@@ -1,47 +1,47 @@
-import React from 'react';
-import './style.css';
-import { Link } from "react-router-dom";
-// import Login from '../Login/login'
-const patientlogin = () => {
+import './style.css'
+import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom';
+
+const Patientlog = () => {
+
+  // collecting the data entered by the user
+  const [ patientLoginData, setPatientLoginData] = useState({email:"",password:""});
+
+  // takes care when user enters the data
+  const handleChange = (e) => {
+    setPatientLoginData({...patientLoginData,[e.target.name]:e.target.value});
+  }
+
+  // sends data to backend when button is clicked
+  const handleClick = (e) => {
+    console.log(patientLoginData)
+  }
+
   return (
-    <div className='Patientlogin'>
+    <div className='grid place-content-center m-52'>
 
-        {/* <Login name = "Patient" newpage = '/patientpanel' details = "Patientlogin"  /> */}
+      <h1 className='text-3xl ml-16'> Patient Login !!! </h1>
 
-        <div className="login">
-        <form className='need-validation'>
-            <div className="login-1">
+      {/* for email field */}
+      <label htmlFor='email' className="text-sm mt-6" >Email Address </label>
+      <input type="email" name="email" id="patient" className='border-2 rounded-lg mt-2 h-8 w-80' onChange={handleChange}/> 
 
-         <h1>Patient Login-Page!!</h1>
+      {/* for password field */}
 
-        <div className="form-group was-validated">
-                <label className='form-label' htmlFor='email'>Email Adress</label><br />
-                <input className='form-control' type="email" id='email' required/> 
+      <label className='text-sm mt-6' htmlFor='password'>Password</label>
+      <input type="password" name="password" id="patient-password" className='border-2 rounded-lg mt-2 h-8 w-80' onChange={handleChange}/>
 
-                <div className="invalid-feedback">
-                    Please Enter your Email adress
-                </div>
-        </div>
+      {/* button field */}
+      <button type="submit" className='rounded-lg bg-blue-600 h-8 w-32 mt-6 ml-20' onClick={handleClick}> Submit </button>
 
-        <div className="form-group was-validated">
-                <label className='form-label' htmlFor='password'>Password</label><br />
-                <input className='form-control' type="password" id='password' required/> 
-                <div className="invalid-feedback">
-                    Please Enter your Password
-                </div>
-        </div>
-        <Link className="nav-link active" aria-current="page" to='/patientpanel'>
-                  <h2> <button className="btn btn-success">Sign in </button></h2>
-                </Link>
-                <div className="forgotpassword">
-                <Link className="nav-link active" aria-current="page" to ='/forgot1'> <p>Forgotten password</p></Link>
-                </div>
-
-            </div>
-            </form>
+      {/* forget password */}
+      <div className='mt-8 mb-16'>
+        <NavLink to="/sendemail" className="ml-20">
+          Forget Password?
+        </NavLink>
       </div>
     </div>
   )
 }
 
-export default patientlogin;
+export default Patientlog;

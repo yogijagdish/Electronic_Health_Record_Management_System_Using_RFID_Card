@@ -1,59 +1,45 @@
 import './style.css'
-import { Link } from "react-router-dom";
-import React, { useEffect } from 'react'
-// import { useNavigate } from 'react-router-dom'
-// import Login from '../Login/login';
+import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom';
+
 const Doctorlog = () => {
 
-// const  navigate = useNavigate()
+  // collecting the data entered by the user
+  const [doctorLoginData, setDoctorLoginData] = useState({email:"",password:"",is_doctor:"True"});
 
-//   const loginHandle = ()=>{
-//    localStorage.setItem('login', true)
-//     navigate('/doctorpanel') 
-//   }
-//   useEffect(()=>{
-//     let login = localStorage.getItem('login')
-//     if(login){
-//       navigate('/doctorpanel')
-//     }
-//     },[])
+  // takes care when user enters the data
+  const handleChange = (e) => {
+    setDoctorLoginData({...doctorLoginData,[e.target.name]:e.target.value});
+  }
+
+  // sends data to backend when button is clicked
+  const handleClick = (e) => {
+    console.log(doctorLoginData)
+  }
+
   return (
-    <div className='Doctorlogin'>
-        {/* <Login name = "Doctor" newpage = '/doctorpanel' details = "doctorlogin" /> */}
+    <div className='grid place-content-center m-52'>
 
-        <div className="login">
-        <form className='need-validation'>
-            <div className="login-1">
+      <h1 className='text-3xl ml-16'> Doctor Login !!! </h1>
 
-         <h1> Doctor Login-Page!!</h1>
+      {/* for email field */}
+      <label htmlFor='email' className="text-sm mt-6" >Email Address </label>
+      <input type="email" name="email" id="doctor" className='border-2 rounded-lg mt-2 h-8 w-80' onChange={handleChange}/> 
 
-        <div className="form-group was-validated">
-                <label className='form-label' htmlFor='email'>Email Adress</label><br />
-                <input className='form-control' type="email" id='email' required/> 
+      {/* for password field */}
 
-                <div className="invalid-feedback">
-                    Please Enter your Email adress
-                </div>
-        </div>
+      <label className='text-sm mt-6' htmlFor='password'>Password</label>
+      <input type="password" name="password" id="doctgor-password" className='border-2 rounded-lg mt-2 h-8 w-80' onChange={handleChange}/>
 
-        <div className="form-group was-validated">
-                <label className='form-label' htmlFor='password'>Password</label><br />
-                <input className='form-control' type="password" id='password' required/> 
-                <div className="invalid-feedback">
-                    Please Enter your Password
-                </div>
-        </div>
-        <Link className="nav-link active" aria-current="page" to='/doctorpanel'>
-                  <h2> <button className="btn btn-success">Sign in </button></h2>
-                </Link>
-                <div className="forgotpassword">
-                <Link className="nav-link active" aria-current="page" to ='/forgot1'> <p>Forgotten password</p></Link>
-                </div>
+      {/* button field */}
+      <button type="submit" className='rounded-lg bg-blue-600 h-8 w-32 mt-6 ml-20' onClick={handleClick}> Submit </button>
 
-            </div>
-            </form>
+      {/* forget password */}
+      <div className='mt-8 mb-16'>
+        <NavLink to="/sendemail" className="ml-20">
+          Forget Password?
+        </NavLink>
       </div>
-
     </div>
   )
 }

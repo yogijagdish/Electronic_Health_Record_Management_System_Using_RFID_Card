@@ -1,46 +1,47 @@
-import React from 'react';
-import './style.css';
-// import Login from '../Login/login'
-import { Link } from "react-router-dom";
-const adminlogin = () => {
+import './style.css'
+import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom';
+
+const Adminlog = () => {
+
+  // collecting the data entered by the user
+  const [ adminLoginData, setAdminLoginData] = useState({email:"",password:"",is_admin:"True"});
+
+  // takes care when user enters the data
+  const handleChange = (e) => {
+    setAdminLoginData({...adminLoginData,[e.target.name]:e.target.value});
+  }
+
+  // sends data to backend when button is clicked
+  const handleClick = (e) => {
+    console.log(adminLoginData)
+  }
+
   return (
-    <div className='Adminlogin'>
-        {/* <Login name = "Admin" newpage = '/adminpanel' details = "adminlogin"  /> */}
+    <div className='grid place-content-center m-52'>
 
-        <div className="login">
-        <form className='need-validation'>
-            <div className="login-1">
+      <h1 className='text-3xl ml-16'> Admin Login !!! </h1>
 
-         <h1>Admin Login-Page!!</h1>
+      {/* for email field */}
+      <label htmlFor='email' className="text-sm mt-6" >Email Address </label>
+      <input type="email" name="email" id="admin" className='border-2 rounded-lg mt-2 h-8 w-80' onChange={handleChange}/> 
 
-        <div className="form-group was-validated">
-                <label className='form-label' htmlFor='email'>Email Adress</label><br />
-                <input className='form-control' type="email" id='email' required/> 
+      {/* for password field */}
 
-                <div className="invalid-feedback">
-                    Please Enter your Email adress
-                </div>
-        </div>
+      <label className='text-sm mt-6' htmlFor='password'>Password</label>
+      <input type="password" name="password" id="admin-password" className='border-2 rounded-lg mt-2 h-8 w-80' onChange={handleChange}/>
 
-        <div className="form-group was-validated">
-                <label className='form-label' htmlFor='password'>Password</label><br />
-                <input className='form-control' type="password" id='password' required/> 
-                <div className="invalid-feedback">
-                    Please Enter your Password
-                </div>
-        </div>
-        <Link className="nav-link active" aria-current="page" to='/adminpanel'>
-                  <h2> <button className="btn btn-success">Sign in </button></h2>
-                </Link>
-                <div className="forgotpassword">
-                <Link className="nav-link active" aria-current="page" to ='/forgot1'> <p>Forgotten password</p></Link>
-                </div>
+      {/* button field */}
+      <button type="submit" className='rounded-lg bg-blue-600 h-8 w-32 mt-6 ml-20' onClick={handleClick}> Submit </button>
 
-            </div>
-            </form>
+      {/* forget password */}
+      <div className='mt-8 mb-16'>
+        <NavLink to="/sendemail" className="ml-20">
+          Forget Password?
+        </NavLink>
       </div>
     </div>
   )
 }
 
-export default adminlogin;
+export default Adminlog;
