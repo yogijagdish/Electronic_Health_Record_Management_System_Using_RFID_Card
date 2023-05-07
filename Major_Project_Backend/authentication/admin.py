@@ -8,7 +8,7 @@ from authentication.models import User
 
 class UserAdmin(BaseUserAdmin):
 
-    list_display = ['email','name','date_of_birth','is_admin']
+    list_display = ['email','name','date_of_birth','is_admin','is_doctor','is_patient','is_reception']
     list_filter = ['is_admin']
     fieldsets = (
         ( 'Log In Credentials', {'fields': ('email','password')}),

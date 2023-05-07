@@ -1,20 +1,35 @@
 import './style.css'
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import { useDoctorLoginAPIMutation } from '../../services/datacommunication';
 
 const Doctorlog = () => {
 
   // collecting the data entered by the user
-  const [doctorLoginData, setDoctorLoginData] = useState({email:"",password:"",is_doctor:"True"});
+  const [doctorLoginData, setDoctorLoginData] = useState({ email: "", password: ""});
+
+  // handles the error during login
+  const [error,setError] = useState({});
+
+  const [loginDoctor, {isLoading}] = useDoctorLoginAPIMutation();
 
   // takes care when user enters the data
   const handleChange = (e) => {
-    setDoctorLoginData({...doctorLoginData,[e.target.name]:e.target.value});
+    setDoctorLoginData({ ...doctorLoginData,[e.target.name]:e.target.value });
   }
 
   // sends data to backend when button is clicked
-  const handleClick = (e) => {
-    console.log(doctorLoginData)
+  const handleClick = async (e) => {
+    e.preventDefault();
+    const response = await loginDoctor(doctorLoginData);
+    console.log(response)
+    if (response.error) {
+      setError(response.error.data)
+      console.log(response.error.data)
+    }
+    if (response.data) {
+      console.log(doctorLoginData)
+    }
   }
 
   return (
@@ -26,10 +41,13 @@ const Doctorlog = () => {
       <label htmlFor='email' className="text-sm mt-6" >Email Address </label>
       <input type="email" name="email" id="doctor" className='border-2 rounded-lg mt-2 h-8 w-80' onChange={handleChange}/> 
 
+      <p className='text-red-700'> {error.email}</p>
+
       {/* for password field */}
 
       <label className='text-sm mt-6' htmlFor='password'>Password</label>
       <input type="password" name="password" id="doctgor-password" className='border-2 rounded-lg mt-2 h-8 w-80' onChange={handleChange}/>
+      <p className="text-red-700"> {error.password} </p>
 
       {/* button field */}
       <button type="submit" className='rounded-lg bg-blue-600 h-8 w-32 mt-6 ml-20' onClick={handleClick}> Submit </button>
@@ -40,6 +58,7 @@ const Doctorlog = () => {
           Forget Password?
         </NavLink>
       </div>
+      <p className='text-red-700'> {error.msg} </p>
     </div>
   )
 }
