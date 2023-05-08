@@ -2,6 +2,9 @@ import './style.css'
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useDoctorLoginAPIMutation } from '../../services/datacommunication';
+import { storeToken } from '../../services/tokenService';
+
+import { useNavigate } from 'react-router-dom';
 
 const Doctorlog = () => {
 
@@ -10,6 +13,8 @@ const Doctorlog = () => {
 
   // handles the error during login
   const [error,setError] = useState({});
+
+  const navigate = useNavigate();
 
   const [loginDoctor, {isLoading}] = useDoctorLoginAPIMutation();
 
@@ -28,7 +33,9 @@ const Doctorlog = () => {
       console.log(response.error.data)
     }
     if (response.data) {
+      storeToken(response.data.token)
       console.log(doctorLoginData)
+      navigate('/doctorpanel')
     }
   }
 

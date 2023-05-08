@@ -2,7 +2,16 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import './style.css'
 import mylogo from '../images/titleimg5.jpeg';
-const navbar = () => {
+import { getToken } from '../../services/tokenService';
+
+import { useSelector } from 'react-redux';
+
+const Navbar = () => {
+
+  let user = useSelector(state => state.user)
+  let username = user.user+"pannel"
+
+  let {access_token} = getToken();
   return (
     <div className='nav'>
       <div className="haha0">
@@ -12,9 +21,11 @@ const navbar = () => {
       </div>
         <div className='haha'>
       <ul>
-     <li>
-     <Link to="/">Home</Link>
-     </li>
+    {!access_token?<li>
+    <Link to="/">Home</Link>
+    </li>:
+    <li>
+      <Link to={username}> {user.user} </Link></li>}
 
      <li>
      <Link to="/about">About</Link>
@@ -31,4 +42,4 @@ const navbar = () => {
   )
 }
 
-export default navbar;
+export default Navbar;

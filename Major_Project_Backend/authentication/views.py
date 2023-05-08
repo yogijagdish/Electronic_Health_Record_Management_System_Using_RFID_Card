@@ -6,14 +6,26 @@ from rest_framework.views import APIView
 
 from authentication import serializers
 from authentication.models import User
+
+from rest_framework_simplejwt.tokens import RefreshToken
 # Create your views here.
+
+
+def get_tokens_for_user(user):
+    refresh = RefreshToken.for_user(user)
+
+    return {
+        'refresh': str(refresh),
+        'access': str(refresh.access_token)
+    }
 
 class UserRegistrationView(APIView):
     def post(self,request,format=None):
         serializer = serializers.UserRegistrationSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             user = serializer.save()
-            return Response({'msg':'User Registration is Sucessful'},status=status.HTTP_201_CREATED)
+            token = get_tokens_for_user(user)
+            return Response({'token':token,'msg':'User Registration is Sucessful'},status=status.HTTP_201_CREATED)
         return Response({'msg':'User Registration is unsucessful'},status=status.HTTP_400_BAD_REQUEST)
 
 class DoctorLoginView(APIView):
@@ -30,7 +42,8 @@ class DoctorLoginView(APIView):
                 userdata = User.objects.get(email=email)
                 print(userdata.is_doctor)
                 if user.is_doctor == True:
-                    return Response({"msg":"Login Sucessful"},status=status.HTTP_200_OK)
+                    token = get_tokens_for_user(user)
+                    return Response({'token':token,'user':'doctor',"msg":"Login Sucessful"},status=status.HTTP_200_OK)
                 else:
                     return Response({'msg':'No doctor found'},status=status.HTTP_401_UNAUTHORIZED)
 
@@ -55,7 +68,8 @@ class ReceptionLoginView(APIView):
                 userdata = User.objects.get(email=email)
                 print(userdata.is_reception)
                 if userdata.is_reception == True:
-                    return Response({'msg':'Reception Login Sucessful'},status=status.HTTP_200_OK)
+                    token = get_tokens_for_user(user)
+                    return Response({'token':token,'user':'admin','msg':'Reception Login Sucessful'},status=status.HTTP_200_OK)
             else:
                 return Response({'msg':'No Receptionist found'},status=status.HTTP_404_NOT_FOUND)
 

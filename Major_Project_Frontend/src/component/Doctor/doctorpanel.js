@@ -6,6 +6,9 @@ import T1 from "../images/treatedpatient1.png";
 import U1 from "../images/upcomingpatient.4png.png";
 import I1 from "../images/information1.png";
 import { Link } from "react-router-dom";
+
+import Logout from "../Logout";
+
 const doctorpanel = () => {
   return (
     <div className="Doctorpanel">
@@ -46,6 +49,7 @@ const doctorpanel = () => {
         </div>
 
         </div>
+        <div> <Logout/> </div>
       </div>
     </div>
   );

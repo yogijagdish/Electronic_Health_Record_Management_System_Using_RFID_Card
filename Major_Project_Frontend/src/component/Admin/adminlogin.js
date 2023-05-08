@@ -2,6 +2,13 @@ import './style.css'
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useReceptionLoginAPIMutation } from '../../services/datacommunication';
+import { getToken, storeToken } from '../../services/tokenService';
+
+import { useDispatch } from 'react-redux';
+import {setUserToken} from "../../features/authSlice"
+import { setUser } from '../../features/userSlice';
+
+import { useNavigate } from 'react-router-dom';
 const Adminlog = () => {
 
   // collecting the data entered by the user
@@ -9,6 +16,10 @@ const Adminlog = () => {
 
   // for handling the error
   const [error,setError] = useState({});
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   // api
   const [loginReception, {isLoading}] = useReceptionLoginAPIMutation(); 
@@ -27,10 +38,22 @@ const Adminlog = () => {
       console.log(response.error)
     }
     if (response.data){
+      storeToken(response.data.token)
+      let {access_token} = getToken();
+      const user = response.data.user
+      dispatch(setUserToken({access_token:access_token}));
+      dispatch(setUser({user:user}))
       console.log(response.data)
+      navigate('/adminpanel')
     }
 
-  }
+  };
+
+  let {access_token} = getToken();
+
+  useEffect(()=>{
+    dispatch(setUserToken({access_token:access_token}));
+  },[access_token,dispatch])
 
   return (
     <div className='grid place-content-center m-52'>

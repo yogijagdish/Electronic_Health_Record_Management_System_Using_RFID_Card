@@ -1,4 +1,3 @@
-import './App.css';
 import Navbar from './component/Navbar/navbar';
 import Home from './component/Homepage/home';
 import About from './component/About/about';
@@ -17,15 +16,23 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Navigate,
 } from "react-router-dom";
 import Footer from './component/Footer/footer';
+
+import { useSelector } from 'react-redux';
+
 const App =() =>{
+
+  let {access_token} = useSelector(state=> state.auth)
+  let user = useSelector(state => state.user)
+
  return (
       <div>
         <BrowserRouter>
         <Navbar/>
         <Routes>
-        <Route exact path="/" element = {<Home/>}/>
+        <Route exact path="/" element ={<Home/>}/>
         <Route exact path="/about" element = {<About/>}/>
         <Route exact path="/contactus" element = {<Contactus/>}/>
         <Route exact path="/doctorlogin" element = {<Doctorlogin/>}/>

@@ -6,7 +6,14 @@ import R1 from "../images/registration3.png";
 import A1 from "../images/adddoctor.png";
 import I1 from "../images/information1.png";
 import { Link } from "react-router-dom";
-const adminpanel = () => {
+import Logout from "../Logout";
+
+import { useSelector } from "react-redux";
+
+
+const Adminpanel = () => {
+
+
   return (
     <div className="Adminpanel">
       <div className="Adminpanel1">
@@ -46,9 +53,10 @@ const adminpanel = () => {
         </div>
 
         </div>
+      <div> <Logout/> </div>
       </div>
     </div>
   );
 };
 
-export default adminpanel;
+export default Adminpanel;
