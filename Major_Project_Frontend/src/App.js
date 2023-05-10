@@ -21,6 +21,8 @@ import {
 import Footer from './component/Footer/footer';
 
 import { useSelector } from 'react-redux';
+import AddDoctor from './component/Doctor/AddDoctor';
+import AddMoreInformation from './component/Doctor/AddMoreInformation';
 
 const App =() =>{
 
@@ -32,18 +34,20 @@ const App =() =>{
         <BrowserRouter>
         <Navbar/>
         <Routes>
-        <Route exact path="/" element ={<Home/>}/>
+        <Route exact path="/" element ={!access_token?<Home/>:<Doctorpanel/>}/>
         <Route exact path="/about" element = {<About/>}/>
         <Route exact path="/contactus" element = {<Contactus/>}/>
         <Route exact path="/doctorlogin" element = {<Doctorlogin/>}/>
         <Route exact path="/patientlogin" element = {<Patient/>}/>
         <Route exact path="/adminlogin" element = {<Admin/>}/>
-        <Route exact path="/doctorpanel" element = {<Doctorpanel/>}/>
+        <Route exact path="/doctorpanel" element = {access_token?<Doctorpanel/>:<Home/>}/>
         <Route exact path="/patientpanel" element = {<Patientpanel/>}/>
-        <Route exact path="/adminpanel" element = {<Adminpanel/>}/>
+        <Route exact path="/adminpanel" element = {access_token?<Adminpanel/>:<Home/>}/>
         <Route exact path = '/forgot1' element = {<Forgot1/>}/>
         <Route exact path = '/registration' element = {<Registration/>}/>
         <Route exact path = '/aboutpatient' element = {<Aboutpatient/>}/>
+        <Route exact path = '/add-doctor' element = {<AddDoctor/>}/>
+        <Route exact path = '/add-doctor-information' element={<AddMoreInformation/>}/>
         </Routes>
         <Footer/>
         </BrowserRouter>

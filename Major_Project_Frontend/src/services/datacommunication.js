@@ -24,7 +24,7 @@ export const dataCommunicationApi = createApi({
     receptionLoginAPI: builder.mutation({
       query: (user) => {
         return {
-          url: 'login-reception',
+          url: 'login-reception/',
           method: 'POST',
           body: user,
           headers: {
@@ -33,11 +33,24 @@ export const dataCommunicationApi = createApi({
         }
       }
     }),
-    // another api
+    // fetching data
+    userProfileAPI: builder.query({
+      query: (access_token) => {
+        return {
+          url: 'profile/',
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json',
+            'authorization': `Bearer ${access_token}`
+          }
+        }
+      }
+    }),
+    // place for another api
 
   }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useDoctorLoginAPIMutation, useReceptionLoginAPIMutation } = dataCommunicationApi
+export const { useDoctorLoginAPIMutation, useReceptionLoginAPIMutation, useUserProfileAPIQuery } = dataCommunicationApi

@@ -34,6 +34,7 @@ const Adminlog = () => {
     e.preventDefault();
     const response = await loginReception(adminLoginData);
     if (response.error) {
+      console.log(adminLoginData)
       setError(response.error.data)
       console.log(response.error)
     }

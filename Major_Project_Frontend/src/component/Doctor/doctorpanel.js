@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import dprofile from "../images/dprofile1.jpeg";
 import Doctorcard from './doctorcard'
@@ -7,9 +7,31 @@ import U1 from "../images/upcomingpatient.4png.png";
 import I1 from "../images/information1.png";
 import { Link } from "react-router-dom";
 
-import Logout from "../Logout";
+import { useUserProfileAPIQuery } from "../../services/datacommunication";
 
-const doctorpanel = () => {
+import Logout from "../Logout";
+import { getToken } from "../../services/tokenService";
+
+const Doctorpanel = () => {
+
+  const {access_token} = getToken();
+
+  const { data,isSuccess} = useUserProfileAPIQuery(access_token);
+
+  const [doctorInfo, setDoctorInfo] = useState({email:"",name:"",date_of_birth:"",is_doctor:""});
+
+  useEffect(()=>{
+    if (data && isSuccess) {
+      setDoctorInfo({
+        email: data.email,
+        name: data.name,
+        date_of_birth: data.date_of_birth,
+        is_doctor: data.is_doctor,
+      })
+    }
+  },[data,isSuccess])
+
+
   return (
     <div className="Doctorpanel">
       <div className="Doctorpanel1">
@@ -21,8 +43,9 @@ const doctorpanel = () => {
         <div className="d234">
           <div className="Doctorpanel3">
             <p>
-              Dr. Akash Sunar <br />
-              MBBs,IOM-Nawalparasi
+              Name: {doctorInfo.name} <br/>
+              Email ID: {doctorInfo.email} <br/>
+              Date of Birth: {doctorInfo.date_of_birth}
             </p>
           </div>
 
@@ -55,4 +78,4 @@ const doctorpanel = () => {
   );
 };
 
-export default doctorpanel;
+export default Doctorpanel;

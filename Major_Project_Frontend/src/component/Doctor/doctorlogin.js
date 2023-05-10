@@ -2,9 +2,13 @@ import './style.css'
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useDoctorLoginAPIMutation } from '../../services/datacommunication';
-import { storeToken } from '../../services/tokenService';
+import { getToken, storeToken } from '../../services/tokenService';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../features/userSlice';
+import { setUserToken } from '../../features/authSlice';
 
 import { useNavigate } from 'react-router-dom';
+
 
 const Doctorlog = () => {
 
@@ -14,9 +18,16 @@ const Doctorlog = () => {
   // handles the error during login
   const [error,setError] = useState({});
 
+
+  // navigate the page to doctor pannel if the correct informaton is given
   const navigate = useNavigate();
 
+  // use to set the state of the slice so they can be used any where in the pages
+  const dispatch = useDispatch();
+
+  // api call being made
   const [loginDoctor, {isLoading}] = useDoctorLoginAPIMutation();
+
 
   // takes care when user enters the data
   const handleChange = (e) => {
@@ -26,15 +37,25 @@ const Doctorlog = () => {
   // sends data to backend when button is clicked
   const handleClick = async (e) => {
     e.preventDefault();
+    // response
     const response = await loginDoctor(doctorLoginData);
     console.log(response)
+
+    // handing error
     if (response.error) {
       setError(response.error.data)
       console.log(response.error.data)
     }
+
+    // handling correct information
     if (response.data) {
       storeToken(response.data.token)
       console.log(doctorLoginData)
+      const user = response.data.user
+      let access_token = getToken();
+      // gives the information about the user
+      dispatch(setUser({user:user}))
+      dispatch(setUserToken({access_token:access_token}))
       navigate('/doctorpanel')
     }
   }

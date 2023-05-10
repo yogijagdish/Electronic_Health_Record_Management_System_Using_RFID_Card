@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     ##created apps
     'authentication',
+    'doctor',
 ]
 
 MIDDLEWARE = [

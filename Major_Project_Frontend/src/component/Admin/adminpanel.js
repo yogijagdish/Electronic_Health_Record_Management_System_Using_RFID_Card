@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import dprofile from "../images/dprofile1.jpeg";
 import Doctorcard from '../Doctor/doctorcard'
@@ -8,10 +8,27 @@ import I1 from "../images/information1.png";
 import { Link } from "react-router-dom";
 import Logout from "../Logout";
 
-import { useSelector } from "react-redux";
-
+import { useUserProfileAPIQuery } from "../../services/datacommunication";
+import { getToken } from "../../services/tokenService";
 
 const Adminpanel = () => {
+
+  let {access_token} = getToken();
+
+  const {data , isSuccess} = useUserProfileAPIQuery(access_token);
+
+  const [adminInfo, setAdminInfo] = useState({email:"",name:"",date_of_birth:""})
+
+  useEffect(()=>{
+    if (data && isSuccess) {
+      console.log(data)
+      setAdminInfo({
+        email:data.email,
+        name: data.name,
+        date_of_birth: data.date_of_birth
+      })
+    }
+  },[data,isSuccess])
 
 
   return (
@@ -25,8 +42,9 @@ const Adminpanel = () => {
         <div className="a234">
           <div className="Adminpanel3">
             <p>
-              Dr. Akash Sunar <br />
-              Gandaki medical College
+              Name: {adminInfo.name} <br/>
+              Email: {adminInfo.email} <br/>
+              Date of Birth: {adminInfo.date_of_birth}
             </p>
           </div>
 
@@ -47,7 +65,7 @@ const Adminpanel = () => {
         
         <div className="doctorcard">
           <Link to = "/registration"> <Doctorcard picture = {R1} name = "New Registration"  /> </Link>
-          <Link to = "/"> <Doctorcard picture = {A1} name = "Add Doctor" /> </Link>
+          <Link to = "/add-doctor"> <Doctorcard picture = {A1} name = "Add Doctor" /> </Link>
           <Link to = "/"> <Doctorcard picture = {I1}  name = "Information"/> </Link>
            
         </div>

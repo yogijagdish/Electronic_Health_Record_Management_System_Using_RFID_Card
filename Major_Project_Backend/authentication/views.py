@@ -43,7 +43,7 @@ class DoctorLoginView(APIView):
                 print(userdata.is_doctor)
                 if user.is_doctor == True:
                     token = get_tokens_for_user(user)
-                    return Response({'token':token,'user':'doctor',"msg":"Login Sucessful"},status=status.HTTP_200_OK)
+                    return Response({'token':token,'user':'Doctor',"msg":"Login Sucessful"},status=status.HTTP_200_OK)
                 else:
                     return Response({'msg':'No doctor found'},status=status.HTTP_401_UNAUTHORIZED)
 
@@ -69,9 +69,12 @@ class ReceptionLoginView(APIView):
                 print(userdata.is_reception)
                 if userdata.is_reception == True:
                     token = get_tokens_for_user(user)
-                    return Response({'token':token,'user':'admin','msg':'Reception Login Sucessful'},status=status.HTTP_200_OK)
+                    return Response({'token':token,'user':'Admin','msg':'Reception Login Sucessful'},status=status.HTTP_200_OK)
+
+                else:
+                    return Response({'msg':'No admin found'},status=status.HTTP_401_UNAUTHORIZED)
             else:
-                return Response({'msg':'No Receptionist found'},status=status.HTTP_404_NOT_FOUND)
+                return Response({'msg':'No User found'},status=status.HTTP_404_NOT_FOUND)
 
         else:
             return Response({'msg':'User not found'},status=status.HTTP_404_NOT_FOUND)
@@ -82,7 +85,7 @@ class UserProfileView(APIView):
     def get(self,request,format=None):
         serializer = serializers.UserProfileSerializer(request.user)
         print(serializer.data)
-        return Response(serializer.data,status=status.HTTP_302_FOUND)
+        return Response(serializer.data,status=status.HTTP_200_OK)
 
 
 # {
