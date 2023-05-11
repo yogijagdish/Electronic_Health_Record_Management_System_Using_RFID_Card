@@ -16,13 +16,11 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Navigate,
 } from "react-router-dom";
 import Footer from './component/Footer/footer';
 
 import { useSelector } from 'react-redux';
-import AddDoctor from './component/Doctor/AddDoctor';
-import AddMoreInformation from './component/Doctor/AddMoreInformation';
+import AddDoctor from './component/Admin/AddDoctor';
 
 const App =() =>{
 
@@ -47,7 +45,6 @@ const App =() =>{
         <Route exact path = '/registration' element = {<Registration/>}/>
         <Route exact path = '/aboutpatient' element = {<Aboutpatient/>}/>
         <Route exact path = '/add-doctor' element = {<AddDoctor/>}/>
-        <Route exact path = '/add-doctor-information' element={<AddMoreInformation/>}/>
         </Routes>
         <Footer/>
         </BrowserRouter>

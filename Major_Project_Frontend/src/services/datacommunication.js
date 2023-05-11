@@ -47,10 +47,22 @@ export const dataCommunicationApi = createApi({
       }
     }),
     // place for another api
+    userRegistrationAPI: builder.mutation({
+      query: (user) => {
+        return {
+          url: 'register/',
+          method: 'POST',
+          body: user,
+          headers: {
+            'content-type': 'application/json'
+          }
+        }
+      }
+    })
 
   }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useDoctorLoginAPIMutation, useReceptionLoginAPIMutation, useUserProfileAPIQuery } = dataCommunicationApi
+export const { useDoctorLoginAPIMutation, useReceptionLoginAPIMutation, useUserProfileAPIQuery,useUserRegistrationAPIMutation } = dataCommunicationApi
