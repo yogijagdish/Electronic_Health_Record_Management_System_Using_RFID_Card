@@ -29,4 +29,4 @@ class UserLoginSerializer(serializers.ModelSerializer):
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ["email","name","date_of_birth","is_doctor"]
+        fields = ["id","email","name","date_of_birth","is_doctor"]

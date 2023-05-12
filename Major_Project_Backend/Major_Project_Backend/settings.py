@@ -46,7 +46,8 @@ INSTALLED_APPS = [
 
     ##created apps
     'authentication',
-    'doctor',
+    'doctorprofile',
+    'patientprofile',
 ]
 
 MIDDLEWARE = [
@@ -145,6 +146,10 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 AUTH_USER_MODEL = "authentication.User"
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 ### default authentication class should use jwt authentication

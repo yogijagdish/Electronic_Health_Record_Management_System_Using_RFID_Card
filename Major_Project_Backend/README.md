@@ -57,3 +57,8 @@ pip install django-cors-headers
 ``` bash
 pip install djangorestframework-simplejwt
 ```
+
+### install pillow field
+``` bash
+pip install pillow 
+```

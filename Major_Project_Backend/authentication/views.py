@@ -72,7 +72,7 @@ class ReceptionLoginView(APIView):
                     return Response({'token':token,'user':'Admin','msg':'Reception Login Sucessful'},status=status.HTTP_200_OK)
 
                 else:
-                    return Response({'msg':'No admin found'},status=status.HTTP_401_UNAUTHORIZED)
+                    return Response({'msg':'Not valid email address for admin'},status=status.HTTP_401_UNAUTHORIZED)
             else:
                 return Response({'msg':'No User found'},status=status.HTTP_404_NOT_FOUND)
 
@@ -80,11 +80,34 @@ class ReceptionLoginView(APIView):
             return Response({'msg':'User not found'},status=status.HTTP_404_NOT_FOUND)
 
 
+class PatientLoginView(APIView):
+    def post(self,request,format=None):
+        serializer = serializers.UserLoginSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            email = serializer.data.get('email')
+            password = serializer.data.get('password')
+
+            user = authenticate(email=email,password=password)
+
+            if user is not None:
+                userdata = User.objects.get(email=email)
+                if userdata.is_patient == True:
+                    token = get_tokens_for_user(user)
+                    return Response({'token':token,'User':'Patient','msg':'Patient login sucessful'})
+                else:
+                    return Response({'msg':'No valid email address for patient'},status=status.HTTP_400_BAD_REQUEST)
+                
+            else:
+                return Response({'msg':'No User Exist with this email address'},status=status.HTTP_400_BAD_REQUEST)
+
+        else:
+            return Response({'msg':'Incorrect data format'},status=status.HTTP_400_BAD_REQUEST)
+
+
 
 class UserProfileView(APIView):
     def get(self,request,format=None):
         serializer = serializers.UserProfileSerializer(request.user)
-        print(serializer.data)
         return Response(serializer.data,status=status.HTTP_200_OK)
 
 

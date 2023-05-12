@@ -6,7 +6,12 @@ import R1 from "../images/registration3.png";
 import A1 from "../images/adddoctor.png";
 import I1 from "../images/information1.png";
 import { Link } from "react-router-dom";
-const patientpanel = () => {
+
+
+import Logout from "../Logout"
+const Patientpanel = () => {
+
+
   return (
     <div className="Patientpanel">
       <div className="Patientpanel1">
@@ -45,10 +50,12 @@ const patientpanel = () => {
            
         </div>
 
+        <Logout/>
+
         </div>
       </div>
     </div>
   );
 };
 
-export default patientpanel;
+export default Patientpanel;

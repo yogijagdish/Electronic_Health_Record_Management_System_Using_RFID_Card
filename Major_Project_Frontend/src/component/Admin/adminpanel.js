@@ -5,7 +5,7 @@ import Doctorcard from '../Doctor/doctorcard'
 import R1 from "../images/registration3.png";
 import A1 from "../images/adddoctor.png";
 import I1 from "../images/information1.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logout from "../Logout";
 
 import { useUserProfileAPIQuery } from "../../services/datacommunication";
@@ -46,6 +46,7 @@ const Adminpanel = () => {
               Email: {adminInfo.email} <br/>
               Date of Birth: {adminInfo.date_of_birth}
             </p>
+            <NavLink to="/update-profile" className="ml-4 text-sm text-blue-500"> Update Profile </NavLink>
           </div>
 
           <div className="Adminpanel4">

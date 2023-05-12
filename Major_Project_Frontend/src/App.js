@@ -21,6 +21,7 @@ import Footer from './component/Footer/footer';
 
 import { useSelector } from 'react-redux';
 import AddDoctor from './component/Admin/AddDoctor';
+import Updateprofile from './component/Admin/Updateprofile';
 
 const App =() =>{
 
@@ -45,6 +46,7 @@ const App =() =>{
         <Route exact path = '/registration' element = {<Registration/>}/>
         <Route exact path = '/aboutpatient' element = {<Aboutpatient/>}/>
         <Route exact path = '/add-doctor' element = {<AddDoctor/>}/>
+        <Route exact path = '/update-profile' element = {<Updateprofile/>}/>
         </Routes>
         <Footer/>
         </BrowserRouter>
