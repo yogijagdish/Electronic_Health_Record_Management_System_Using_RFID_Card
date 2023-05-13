@@ -13,7 +13,16 @@ class PatientDataView(APIView):
         id = serializer.data['id']
         print(serializer.data['id'])
         patient = PatientInformation.objects.get(user_id = id)
-        print(patient.gender)
         patserial = serializers.PatientDataSerializer(patient)
         print(patserial.data)
         return Response(patserial.data)
+
+    # def post(self,request,format=None):
+    #     serializer = serial.UserProfileSerializer(request.user)
+    #     id = serializer.data['id']
+    #     input_data = request.data
+    #     input_data['user_id'] = id
+    #     patserial = serializers.PatientDataSerializer(data = input_data)
+    #     patserial.is_valid(raise_exception=True)
+    #     patserial.save()
+    #     return Response({'msg':'data saved successfully'})

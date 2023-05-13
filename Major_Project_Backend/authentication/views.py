@@ -111,6 +111,8 @@ class UserProfileView(APIView):
         return Response(serializer.data,status=status.HTTP_200_OK)
 
 
+
+
 # {
 # "email":"yogi@jagdiosh.com",
 # "name":"JD",

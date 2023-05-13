@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import dprofile from "../images/dprofile1.jpeg";
 import Doctorcard from '../Doctor/doctorcard'
@@ -9,7 +9,27 @@ import { Link } from "react-router-dom";
 
 
 import Logout from "../Logout"
+import { getToken } from "../../services/tokenService";
+import { useUserProfileAPIQuery } from "../../services/datacommunication";
 const Patientpanel = () => {
+
+  const {access_token} = getToken();
+
+  const {data, isSuccess} = useUserProfileAPIQuery(access_token);
+
+  const [patientInfo, setPatientInfo] = useState({email:"",name:"",date_of_birth:"",is_patient:""});
+
+  useEffect(()=>{
+    if (data && isSuccess){
+    setPatientInfo({
+      email: data.email,
+      name: data.name,
+      date_of_birth: data.date_of_birth,
+      is_patient: data.is_patient
+    })
+    }
+  },[data,isSuccess])
+
 
 
   return (
@@ -23,8 +43,9 @@ const Patientpanel = () => {
         <div className="p234">
           <div className="Patientpanel3">
             <p>
-              Dr. Akash Sunar <br />
-              Gandaki medical College
+              Name: {patientInfo.name} <br/>
+              Email ID: {patientInfo.email} <br/>
+              Date of Birth: {patientInfo.date_of_birth}
             </p>
           </div>
 

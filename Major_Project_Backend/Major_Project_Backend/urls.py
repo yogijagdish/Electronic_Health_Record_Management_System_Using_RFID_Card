@@ -25,4 +25,5 @@ urlpatterns = [
     path('auth/',include('authentication.urls')),
     path('doctorprofile/',include('doctorprofile.urls')),
     path('patientprofile/',include('patientprofile.urls')),
+    path('userprofile/',include('userprofile.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

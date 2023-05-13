@@ -11,3 +11,15 @@ class PatientInformation(models.Model):
     chitizenship_num = models.CharField(max_length=20)
     father_name = models.CharField(max_length=255)
     mother_name = models.CharField(max_length=255)
+
+# class PatientReport(models.Model):
+#     user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
+#     test_name = models.CharField(max_length=255)
+#     refered_at = models.DateTimeField(auto_now_add=True)
+#     tested_at = models.DateTimeField(null=True)
+    # report = models.FileField(upload_to='files/')
+
+
+# class PatientStatus(models.Model):
+#     user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
+#     is_available = models.BooleanField()

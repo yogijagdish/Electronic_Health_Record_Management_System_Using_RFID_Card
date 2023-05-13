@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import { useUserRegistrationAPIMutation } from "../../services/datacommunication";
+import { useNavigate } from "react-router-dom";
+import { storeUser } from "../../services/userService";
 
 export default function AddDoctor() {
 
@@ -11,6 +13,8 @@ export default function AddDoctor() {
 
     const [registerUser, {isLoading}] = useUserRegistrationAPIMutation();
 
+    const navigate = useNavigate();
+
 
 
     const handleChange = (e) => {
@@ -20,20 +24,22 @@ export default function AddDoctor() {
     const handleClick = async (e) => {
         e.preventDefault();
         console.log(registrationData)
-
+        storeUser(registrationData.email)
+        console.log(registrationData)
+        
         const response = await registerUser(registrationData);
         console.log(response)
-
+        
         if (response.error){
             setServerError(response.error.data)
             console.log(response.error.data)
         }
-
+        
         if (response.data) {
             setServerError(response.data)
+            navigate('/add-more-information')
         }
 
-        // navigate('/add-doctor-information')
 
     }
 

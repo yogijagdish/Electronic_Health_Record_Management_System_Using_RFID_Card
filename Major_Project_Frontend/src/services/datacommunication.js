@@ -6,7 +6,7 @@ export const dataCommunicationApi = createApi({
   reducerPath: 'dataCommunicationApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://127.0.0.1:8000' }),
   endpoints: (builder) => ({
-    // login api
+    // login doctor api
     doctorLoginAPI: builder.mutation({
       query: (user) => {
         return {
@@ -20,7 +20,7 @@ export const dataCommunicationApi = createApi({
 
       }
     }),
-    //  reception api
+    //  login admin
     receptionLoginAPI: builder.mutation({
       query: (user) => {
         return {
@@ -33,7 +33,7 @@ export const dataCommunicationApi = createApi({
         }
       }
     }),
-    // patient api
+    //  login patient
     patientLoginAPI: builder.mutation({
       query: (user) => {
         return {
@@ -46,34 +46,7 @@ export const dataCommunicationApi = createApi({
         }
       }
     }),
-    // fetching data
-    userProfileAPI: builder.query({
-      query: (access_token) => {
-        return {
-          url: 'auth/profile/',
-          method: 'GET',
-          headers: {
-            'content-type': 'application/json',
-            'authorization': `Bearer ${access_token}`
-          }
-        }
-      }
-    }),
-    // getiing data
-    patientDataAPI: builder.query({
-      query: (access_token) => {
-        return {
-          url: 'patientprofile/get-data/',
-          method: 'GET',
-          headers: {
-            'content-type': 'application/json',
-            'authorization': `Bearer ${access_token}`
-          }
-        }
-
-      }
-    }),
-    // registration of user api
+    // registration of user
     userRegistrationAPI: builder.mutation({
       query: (user) => {
         return {
@@ -86,23 +59,93 @@ export const dataCommunicationApi = createApi({
         }
       }
     }),
-    imageUploadAPI: builder.mutation({
-      query: (user) => {
+
+    //  fetch the data from User model and displays the data
+    userProfileAPI: builder.query({
+      query: (access_token) => {
         return {
-          url: 'doctorprofile/upload-image/',
-          method: 'POST',
-          body: user,
+          url: 'auth/profile/',
+          method: 'GET',
           headers: {
-            'content-type': 'image/png'
+            'content-type': 'application/json',
+            'authorization': `Bearer ${access_token}`
           }
         }
       }
     }),
+    // user data
+    // userDataAPI: builder.query({
+    //   query: (access_token) => {
+    //     return {
+    //       url: 'userprofile/user-data/',
+    //       method: 'GET',
+    //       headers: {
+    //         'content-type': 'application/json',
+    //         'authorization': `Bearer ${access_token}`
+    //       }
+    //     }
+    //   }
+    // }),
+    // patient api
+    // fetching the data from user model to display in profile
+    // getiing data
+    // posting data
+    patientDataAPI: builder.query({
+      query: (access_token) => {
+        return {
+          url: 'patientprofile/get-data/',
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json',
+            'authorization': `Bearer ${access_token}`
+          }
+        }
+      }
+    }),
+    // registration of user api
+    // imageUploadAPI: builder.mutation({
+    //   query: (user) => {
+    //     return {
+    //       url: 'doctorprofile/upload-image/',
+    //       method: 'POST',
+    //       body: user,
+    //       headers: {
+    //         'content-type': 'image/png'
+    //       }
+    //     }
+    //   }
+    // }),
+    // //get the user id
+    // getUserIdAPI: builder.mutation({
+    //   query: (user) => {
+    //     return {
+    //       url: 'userprofile/user-data/',
+    //       method: 'POST',
+    //       body: user,
+    //       headers: {
+    //         'content-type': 'application/json'
+    //       }
+    //     }
+    //   }
+    // }),
     // another api
+    // storeInfoUserAPI: builder.mutation({
+    //   query: (user) => {
+    //     return {
+    //       url: 'userprofile/save-user/',
+    //       method: 'POST',
+    //       body: user,
+    //       headers: {
+    //         'content-type': 'application/json'
+    //       }
+    //     }
+    //   }
+    // }),
+
   })
   
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useDoctorLoginAPIMutation, useReceptionLoginAPIMutation,usePatientLoginAPIMutation, useUserProfileAPIQuery,useUserRegistrationAPIMutation, useImageUploadAPIMutation, usePatientDataAPIQuery } = dataCommunicationApi
+export const { useDoctorLoginAPIMutation, usePatientLoginAPIMutation,useReceptionLoginAPIMutation, useUserRegistrationAPIMutation, useUserProfileAPIQuery, usePatientDataAPIQuery } = dataCommunicationApi
