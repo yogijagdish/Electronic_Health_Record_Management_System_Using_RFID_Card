@@ -82,6 +82,7 @@ class ReceptionLoginView(APIView):
 
 class PatientLoginView(APIView):
     def post(self,request,format=None):
+        print(request.data)
         serializer = serializers.UserLoginSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             email = serializer.data.get('email')

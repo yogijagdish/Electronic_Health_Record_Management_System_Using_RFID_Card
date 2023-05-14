@@ -13,7 +13,6 @@ export default function AddDoctor() {
 
     const [registerUser, {isLoading}] = useUserRegistrationAPIMutation();
 
-    const navigate = useNavigate();
 
 
 
@@ -37,7 +36,6 @@ export default function AddDoctor() {
         
         if (response.data) {
             setServerError(response.data)
-            navigate('/add-more-information')
         }
 
 
@@ -92,7 +90,7 @@ export default function AddDoctor() {
 
 
             {/* button field */}
-            <button type="submit" className="h-8 w-24 mt-8 ml-24 mb-4 bg-blue-500 rounded-lg" onClick={handleClick}> Next Page </button>
+            <button type="submit" className="h-8 w-24 mt-8 ml-24 mb-4 bg-blue-500 rounded-lg" onClick={handleClick}> Save </button>
 
             <p className="text-green-600 mb-32">{serverError.msg}</p>
             <p className="text-red-600 mb-32"> {serverError.non_field_errors} </p>

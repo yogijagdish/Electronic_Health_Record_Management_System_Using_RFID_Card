@@ -1,49 +1,32 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, {useState} from "react";
 
-// import { useGetUserIdAPIMutation } from "../../services/datacommunication";
-import { getUser } from "../../services/userService";
+import { useUpdatePatientAPIMutation } from "../../services/datacommunication";
+import { getToken } from "../../services/tokenService";
 
-// import { useStoreInfoUserAPIMutation } from "../../services/datacommunication";
+export default function Updatepatient() {
 
-export default function AddMoreInformation() {
+    const {access_token} = getToken();
 
-    const [userInfo,setUserInfo] = useState({user:"",id_number:"",patient_name:"",gender:"",permanent_address:"",chitizenship_num:"",father_name:"",mother_name:""});
+    const [userInfo,setUserInfo] = useState({id_number:"",patient_name:"",gender:"",permanent_address:"",chitizenship_num:"",father_name:"",mother_name:""});
 
-    // const [emailData,isLoading] = useGetUserIdAPIMutation();
-
-    // const [storeData] = useStoreInfoUserAPIMutation();
-
-    const email = getUser();
-
-    // const response = await emailData(email);
-    // console.log(response)
-    // const getData = async() => {
-    //     const respone = await emailData(email)
-    //     const id = respone.data.id
-    //     setUserInfo({user:id})
-    // };
-
-
-
+    const [updatePatient, {isLoading}] = useUpdatePatientAPIMutation();
 
 
     const handleChange = (e) => {
+        e.preventDefault();
         setUserInfo({...userInfo,[e.target.name]:e.target.value})
     }
 
     const handleClick = async(e) => {
-        // getData();
-        // const response = await storeData(userInfo);
-        // console.log(response)
+        e.preventDefault();
         console.log(userInfo);
-
+        const response = await updatePatient({userInfo,access_token});
+        console.log(response)
+        
     }
 
-    return(
+    return (
         <div className="grid place-content-center">
-            <p className="mt-8 text-xl"> ADD MORE INFORMATION</p>
         <label htmlFor="id_number" className="text-sm mt-6"> Id Number </label>
         <input type="text" name="id_number" id="id_number" className="border-2 rounded-lg h-8 w-80 mt-2" onChange={handleChange}/>
 
@@ -69,14 +52,3 @@ export default function AddMoreInformation() {
         </div>
     )
 }
-
-
-// "user_id":"5",
-// "id_number":"123",
-// "patient_name":"jd",
-// "gender":"m",
-// "permanent_address":"pyuthan",
-// "chitizenship_num":"789",
-// "father_name":"ram",
-// "mother_name":"sita"
-// }

@@ -22,7 +22,7 @@ import Footer from './component/Footer/footer';
 import { useSelector } from 'react-redux';
 import AddDoctor from './component/Admin/AddDoctor';
 import Updateprofile from './component/Admin/Updateprofile';
-import AddMoreInformation from './component/Admin/AddMoreInformation';
+import Updatepatient from './component/Patient/Updatepatient';
 
 const App =() =>{
 
@@ -48,7 +48,7 @@ const App =() =>{
         <Route exact path = '/aboutpatient' element = {<Aboutpatient/>}/>
         <Route exact path = '/add-doctor' element = {<AddDoctor/>}/>
         <Route exact path = '/update-profile' element = {<Updateprofile/>}/>
-        <Route exact path = '/add-more-information' element = {<AddMoreInformation/>}/>
+        <Route exact path = '/update-patient' element = {<Updatepatient/>}/>
         </Routes>
         <Footer/>
         </BrowserRouter>

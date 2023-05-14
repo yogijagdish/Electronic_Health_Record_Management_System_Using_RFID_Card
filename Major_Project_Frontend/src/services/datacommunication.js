@@ -102,6 +102,19 @@ export const dataCommunicationApi = createApi({
         }
       }
     }),
+    updatePatientAPI: builder.mutation({
+      query: ( {userInfo, access_token} ) => {
+        return {
+          url: 'patientprofile/patient-update/',
+          method: 'POST',
+          body: userInfo,
+          headers: {
+            'authorization': `Bearer ${access_token}`
+
+          }
+        }
+      }
+    }),
     // registration of user api
     // imageUploadAPI: builder.mutation({
     //   query: (user) => {
@@ -148,4 +161,4 @@ export const dataCommunicationApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useDoctorLoginAPIMutation, usePatientLoginAPIMutation,useReceptionLoginAPIMutation, useUserRegistrationAPIMutation, useUserProfileAPIQuery, usePatientDataAPIQuery } = dataCommunicationApi
+export const { useDoctorLoginAPIMutation, usePatientLoginAPIMutation,useReceptionLoginAPIMutation, useUserRegistrationAPIMutation, useUserProfileAPIQuery, usePatientDataAPIQuery, useUpdatePatientAPIMutation } = dataCommunicationApi

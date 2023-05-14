@@ -5,7 +5,7 @@ import Doctorcard from '../Doctor/doctorcard'
 import R1 from "../images/registration3.png";
 import A1 from "../images/adddoctor.png";
 import I1 from "../images/information1.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 import Logout from "../Logout"
@@ -47,6 +47,7 @@ const Patientpanel = () => {
               Email ID: {patientInfo.email} <br/>
               Date of Birth: {patientInfo.date_of_birth}
             </p>
+              <NavLink to="/update-patient" className="text-blue-500"> Update Patient </NavLink>
           </div>
 
           <div className="Patientpanel4">
