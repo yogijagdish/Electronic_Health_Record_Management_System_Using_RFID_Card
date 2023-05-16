@@ -115,6 +115,7 @@ export const dataCommunicationApi = createApi({
         }
       }
     }),
+
     // registration of user api
     // imageUploadAPI: builder.mutation({
     //   query: (user) => {

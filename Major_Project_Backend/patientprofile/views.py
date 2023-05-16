@@ -5,6 +5,8 @@ from patientprofile import serializers
 from authentication.models import User
 from patientprofile.models import PatientInformation
 
+
+
 from authentication import serializers as serial
 # Create your views here.
 class PatientDataView(APIView):
@@ -38,5 +40,15 @@ class PatientUpdate(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response({'msg':'Data saved successfully'})
+
+
+## for searching the user
+
+class UserSearchView(APIView):
+    def get(self,request):
+        query = request.GET.get('q','')
+        users = User.objects.filter(email__icontains=query)
+        serialized_user = serializers.UserSerializer(users,many=True)
+        return Response(serialized_user.data)
         
         

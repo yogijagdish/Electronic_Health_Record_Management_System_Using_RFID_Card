@@ -1,105 +1,40 @@
+import axios from "axios";
 import React from "react";
-import "./style.css";
-const Form = () => {
+import { useState } from "react";
+
+
+export default function Registration() {
+
+  const [query, setQuery] = useState('');
+
+  const [users,setUsers] = useState([]);
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setQuery(e.target.value)
+  }
+
+  axios.defaults.baseURL = 'http://127.0.0.1:8000/patientprofile'
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    console.log(query);
+    try {
+      const response = await axios.get(`/search/?q=${query}`);
+      setUsers(response.data)
+      console.log(users)
+    }
+    catch (error) {
+      console.log(error)
+    }
+  };
+
+
+
   return (
-    <div className="Registration">
-      <div className="heading">
-        <h2>Please fill your required information here:</h2>
-      </div>
-
-      <div className="box">
-        <div className="form">
-          <form className="row g-3">
-            <div className="col-md-6">
-              <label htmlFor="inputtext4" className="form-label">
-              Name
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="inputtext4"
-                placeholder="Enter your first name"
-              />
-            </div>
-            <div className="col-md-6">
-              <label htmlFor="inputtext4" className="form-label">
-                Middle Name:
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="inputtext4"
-                placeholder="Enter your middle name"
-              />
-            </div>
-            <div className="col-md-6">
-              <label htmlFor="inputtext4" className="form-label">
-                Last Name:
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="inputtext4"
-                placeholder="Enter your last name"
-              />
-            </div>
-            <div className="col-md-6">
-              <label htmlFor="inputtext4" className="form-label">
-                Email:
-              </label>
-              <input type="email" className="form-control" id="inputtext4" />
-            </div>
-            <div className="col-12">
-              <label htmlFor="inputAddress" className="form-label">
-                Age:
-              </label>
-              <input type="number" className="form-control" id="inputAddress" />
-            </div>
-            <div className="col-12">
-              <label htmlFor="inputAddress2" className="form-label">
-                Address:
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="inputAddress2"
-                placeholder="Pokhara"
-              />
-            </div>
-            <div className="col-md-6">
-              <label htmlFor="inputCity" className="form-label">
-                City:
-              </label>
-              <input type="text" className="form-control" id="inputCity" />
-            </div>
-            <div className="col-md-5">
-              <label htmlFor="inputCity" className="form-label">
-                sex:
-              </label>
-              <select>
-                <option value="1">male</option>
-                <option value="2">female</option>
-                <option value="2">others</option>
-              </select>
-            </div>
-          </form>
-        </div><br />
-        {/* adding button */}
-        <div className="button">
-          <button type="buttonk" class="btn btn-success">
-            ADD
-          </button>
-        </div>
-      </div>
-      {/* for scanning */}
-      <div className="button2">
-        <text>Have u already made a card ?</text>
-        <button type="buttonk" class="btn btn-success">
-          scan card
-        </button>
-      </div>
+    <div>
+    <input type="text" name="query" id="query" placeholder="search ..." className="ml-32 h-8 w-64 border-2 rounded-lg" onChange={handleChange}/>
+    <button type="submit" className="text-sm ml-2 bg-blue-600 h-8 w-32 rounded-lg border-2" onClick={handleClick}> Search</button>
     </div>
-  );
-};
-
-export default Form;
+  )
+}
