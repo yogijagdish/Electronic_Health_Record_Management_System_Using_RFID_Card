@@ -116,6 +116,19 @@ export const dataCommunicationApi = createApi({
       }
     }),
 
+    updatePatientStatusAPI: builder.mutation({
+      query: (user) => {
+        return {
+          url: 'patientprofile/update-status/',
+          method: 'PUT',
+          body: user,
+          headers: {
+            'content-type': 'application/json'
+          }
+        }
+      }
+    })
+
     // registration of user api
     // imageUploadAPI: builder.mutation({
     //   query: (user) => {
@@ -162,4 +175,4 @@ export const dataCommunicationApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useDoctorLoginAPIMutation, usePatientLoginAPIMutation,useReceptionLoginAPIMutation, useUserRegistrationAPIMutation, useUserProfileAPIQuery, usePatientDataAPIQuery, useUpdatePatientAPIMutation } = dataCommunicationApi
+export const { useDoctorLoginAPIMutation, usePatientLoginAPIMutation,useReceptionLoginAPIMutation, useUserRegistrationAPIMutation, useUserProfileAPIQuery, usePatientDataAPIQuery, useUpdatePatientAPIMutation, useUpdatePatientStatusAPIMutation } = dataCommunicationApi

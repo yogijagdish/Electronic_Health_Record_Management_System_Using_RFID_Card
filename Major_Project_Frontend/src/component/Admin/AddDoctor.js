@@ -13,6 +13,8 @@ export default function AddDoctor() {
 
     const [registerUser, {isLoading}] = useUserRegistrationAPIMutation();
 
+    const navigate = useNavigate();
+
 
 
 
@@ -36,6 +38,8 @@ export default function AddDoctor() {
         
         if (response.data) {
             setServerError(response.data)
+            navigate('/new-patient')
+            
         }
 
 

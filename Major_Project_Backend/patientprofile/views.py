@@ -3,7 +3,8 @@ from rest_framework.views import APIView
 
 from patientprofile import serializers
 from authentication.models import User
-from patientprofile.models import PatientInformation
+from patientprofile.models import PatientInformation,PatientStatus
+
 
 
 
@@ -50,5 +51,48 @@ class UserSearchView(APIView):
         users = User.objects.filter(email__icontains=query)
         serialized_user = serializers.UserSerializer(users,many=True)
         return Response(serialized_user.data)
+
+
+## for changing the status of patient
+
+class PatientStatusView(APIView):
+    def put(self,request,pk):
+        try:
+            user  = PatientStatus.objects.get(pk=pk)
+        except User.DoesNotExist:
+            return Response({'msg':'User Doesnot Exists'})
+
+        input_data = request.data
+        is_available = input_data['is_available']
+        is_treated = input_data['is_treated']
+        problem = input_data['problem']
+
+        user.is_available = is_available
+        user.is_treated = is_treated
+        user.problem = problem
+        user.save()
+        return Response({'msg':'status changed successfully'})
+
+class CreatePatientStatusView(APIView):
+    def post(self,request):
+        statusSerializer = serializers.PatientStatusSerilaizer(data = request.data)
+        statusSerializer.is_valid(raise_exception=True)
+        statusSerializer.save()
+        print(statusSerializer.data)
+        return Response({'msg':'status created successfully'})
+
+
+class AsignDoctorView(APIView):
+    def get(self,request,format=None):
+        user = User.objects.filter(is_doctor=True)
+        print(user)
+        serialzed_data = serializers.AsignDoctorSerializer(user,many=True)
+        # serialzed_data.is_valid(raise_exception=True)
+        return Response(serialzed_data.data)
+        
+        
+
+
+    
         
         

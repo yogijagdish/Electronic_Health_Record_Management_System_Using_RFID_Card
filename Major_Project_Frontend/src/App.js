@@ -11,6 +11,9 @@ import Adminpanel from './component/Admin/adminpanel';
 import Forgot1 from './component/Forgotpassword/forgot1';
 import Registration from './component/Admin/registration';
 import Aboutpatient from './component/Patient/aboutpatient';
+
+import Newpatient from './component/Admin/Newpatient';
+import Oldpatient from './component/Admin/Oldpatient'
 // import Protected from './component/Protected/protected'
 import {
   BrowserRouter,
@@ -28,6 +31,8 @@ const App =() =>{
 
   let {access_token} = useSelector(state=> state.auth)
   let user = useSelector(state => state.user)
+
+  // console.log(state);
 
  return (
       <div>
@@ -49,6 +54,8 @@ const App =() =>{
         <Route exact path = '/add-doctor' element = {<AddDoctor/>}/>
         <Route exact path = '/update-profile' element = {<Updateprofile/>}/>
         <Route exact path = '/update-patient' element = {<Updatepatient/>}/>
+        <Route exact path = '/new-patient' element = {<Newpatient/>}/>
+        <Route exact path = '/old-patient' element = {<Oldpatient/>}/>
         </Routes>
         <Footer/>
         </BrowserRouter>

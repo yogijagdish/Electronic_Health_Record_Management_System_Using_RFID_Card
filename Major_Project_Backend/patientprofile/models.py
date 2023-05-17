@@ -23,3 +23,10 @@ class PatientInformation(models.Model):
 # class PatientStatus(models.Model):
 #     user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
 #     is_available = models.BooleanField()
+
+class PatientStatus(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
+    is_available = models.BooleanField(default=False)
+    is_treated = models.BooleanField(default=False)
+    problem = models.CharField(max_length=400)
+
