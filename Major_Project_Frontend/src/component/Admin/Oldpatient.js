@@ -4,46 +4,49 @@ import { useState } from "react";
 import axios from "axios";
 
 
-
 export default function Oldpatient() {
+
 
     const [data,setData] = useState({id:"",is_available:"",is_treated:"",problem:"",doctor:""})
 
-    const [query, setQuery] = useState('');
+    const [doctor,setDoctor] = useState([0]);
 
-    const [users,setUsers] = useState([0]);
+    const [getid,setGetid] = useState();
+
+
 
     axios.defaults.baseURL = 'http://127.0.0.1:8000/patientprofile'
 
-    const handleSearch = async (e) => {
-      e.preventDefault();
-      console.log(query);
-      try {
-        const response = await axios.get(`/search/?q=${query}`);
-        setUsers(response.data)
-        console.log(users[0].id)
-      }
-      catch (error) {
-        console.log("this is error");
-        console.log(error)
-      }
-    };
 
-    const handleSearchDoctor = (e) => {
+
+    const searchDoctor = async (e) => {
         e.preventDefault();
-        setQuery(e.target.value)
-      }
+        try {
+            const response = await axios.get('/asign-doctor/');
+            setDoctor(response.data)
+            console.log(doctor);
+        }
+        catch (error) {
+            console.log(error);
+
+        }
+
+
+    }
 
 
     const handleChange = (e) => {
         e.preventDefault();
 
-        setData({...data,[e.target.name]:e.target.value})
+        setData((data) => ({...data,[e.target.name]:e.target.value}))
     }
 
     const handleClick = (e) => {
         e.preventDefault();
-        console.log(data);
+        if (getid){
+        setData((data) => ({...data,doctor:getid}));
+    }
+    console.log(data);
     }
 
     return (
@@ -60,11 +63,14 @@ export default function Oldpatient() {
             <label htmlFor="problem" className="text-sm mt-6"> Problem </label>
             <textarea name="problem" id="problem" cols="30" rows="10" className="border-2 rounded-lg mt-2" onChange={handleChange}> Write the problem</textarea>
 
-            <div>
-
-            <input type="text" name="asign_doctor" id="asign doctor" className="border-2 rounded-lg mt-2 mb-6" onChange={handleSearchDoctor}/>
-            <button type="submit" className="rounded-lg border-2 bg-blue-600 h-8 w-32 ml-4" onClick={handleSearch}> Search doctor </button>
-            </div>
+           <button type="submit" onClick={searchDoctor}> Search for Doctor </button>
+           <ul>
+                {doctor.map((array) => (
+                    <li key={array.id} className="mt-2 ml-4">{array.name}
+                    <button type="submit" className="ml-16 bg-blue-500 rounded-lg border-2 h-8 w-16" onClick={()=> { setGetid(array.id) ; console.log(getid)}}> Add </button>
+                    </li>
+                ))}
+           </ul>
 
             <button type="submit" className="bg-blue-600 border-2 rounded-lg  h-8 w-16 ml-32" onClick={handleClick}> Add</button>
 

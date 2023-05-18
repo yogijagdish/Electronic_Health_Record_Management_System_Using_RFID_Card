@@ -13,7 +13,9 @@ import Registration from './component/Admin/registration';
 import Aboutpatient from './component/Patient/aboutpatient';
 
 import Newpatient from './component/Admin/Newpatient';
-import Oldpatient from './component/Admin/Oldpatient'
+import Oldpatient from './component/Admin/Oldpatient';
+
+import Upcomingpatient from './component/Doctor/Upcomingpatient';
 // import Protected from './component/Protected/protected'
 import {
   BrowserRouter,
@@ -56,6 +58,7 @@ const App =() =>{
         <Route exact path = '/update-patient' element = {<Updatepatient/>}/>
         <Route exact path = '/new-patient' element = {<Newpatient/>}/>
         <Route exact path = '/old-patient' element = {<Oldpatient/>}/>
+        <Route exact path = '/upcoming-patient' element={<Upcomingpatient/>}/>
         </Routes>
         <Footer/>
         </BrowserRouter>

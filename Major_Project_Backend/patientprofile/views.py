@@ -90,9 +90,3 @@ class AsignDoctorView(APIView):
         # serialzed_data.is_valid(raise_exception=True)
         return Response(serialzed_data.data)
         
-        
-
-
-    
-        
-        

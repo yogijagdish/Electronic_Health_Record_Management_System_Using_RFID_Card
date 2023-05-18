@@ -29,4 +29,5 @@ class PatientStatus(models.Model):
     is_available = models.BooleanField(default=False)
     is_treated = models.BooleanField(default=False)
     problem = models.CharField(max_length=400)
+    doctor = models.IntegerField()
 

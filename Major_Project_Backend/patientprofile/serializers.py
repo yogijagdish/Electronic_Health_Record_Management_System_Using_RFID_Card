@@ -23,7 +23,7 @@ class PatientStatusSerilaizer(serializers.ModelSerializer):
         fields = ['user_id','is_available','is_treated','problem','doctor']
 
         extra_kwargs = {
-            'user_id': {'source': 'user'}
+            'user_id': {'source': 'user'},
         }
 
 

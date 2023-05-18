@@ -6,7 +6,7 @@ class PatientInformationAdmin(admin.ModelAdmin):
     list_display = ['patient_name','gender','father_name','mother_name']
 
 class PatientStatusAdmin(admin.ModelAdmin):
-    list_display = ['user_id','is_available','is_treated','problem']
+    list_display = ['user_id','is_available','is_treated','problem','doctor']
 
 admin.site.register(PatientInformation,PatientInformationAdmin)
 admin.site.register(PatientStatus,PatientStatusAdmin)
