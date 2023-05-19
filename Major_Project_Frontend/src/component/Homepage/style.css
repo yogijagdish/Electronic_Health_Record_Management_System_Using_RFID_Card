@@ -1,6 +1,7 @@
 .home{
-    background-image: url(/src/component/images/l3.png);
-    height:81vh;
+    background-image: url(/src/component/images/bg.jpg);
+    height:84vh;
+    background-size: cover;
 
 }
 .cardhead{

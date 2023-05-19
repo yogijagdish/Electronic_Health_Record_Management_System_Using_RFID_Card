@@ -3,10 +3,10 @@ import "./style.css";
 const doctorcard = (props) => {
   return (
     <div className="dcard">
-      <div class="card">
+      {/* <div class="card"> */}
         <img src={props.picture} alt="Fissure in Sandstone" />
-        <p>{props.name}</p>
-      </div>
+        {/* <p>{props.name}</p>
+      </div> */}
     </div>
       
   );

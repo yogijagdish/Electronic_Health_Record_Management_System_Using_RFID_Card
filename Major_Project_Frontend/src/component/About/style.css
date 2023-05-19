@@ -1,5 +1,83 @@
 .About{
-    background-image: url(/src/component/images/l3.png);
+    background-image: url(/src/component/images/darkbg.jpg);
     height:81vh;
+    background-size: cover;
 
+}
+.About1{
+    padding:50px 150px;
+    color: white;
+    height: 30vh;
+}
+.About1 h2{
+    font-weight: 700;
+    letter-spacing: 1px;
+
+}
+.About1 p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom:0px;
+    letter-spacing: 1px;
+}
+.About2{
+    background-color: white;
+    height: 55vh;
+    width:98.9vw;
+}
+.About2 h2{
+    color:#1ca6f3;
+    font-weight:700;
+    letter-spacing: 1px;
+    padding-top: 10px;
+    text-align: center;
+
+}
+.About2 p{
+    width: 50vw;
+     padding-left: 150px;
+     color: #757575;
+     font-weight: 600;
+     font-size:17px;
+     width: 90vw;
+     letter-spacing: 1px;
+     text-align: center;
+}
+.About3{
+    height:30vh;
+    width: 25vw;
+    padding: 40px 10px;
+    
+}
+.About3 img{
+    padding-left:150px;
+}
+.About3 h5{
+    padding-left:130px;
+    padding-top: 10px;
+}
+.About3 p{
+    padding-left:30px;
+    padding-top: 6px;
+    width:25vw;
+}
+.About3456{
+    display:flex;
+}
+.About6{
+    height:30vh;
+    width: 25vw;
+    padding: 40px 10px;
+}
+.About6 img{
+    padding-left:140px;
+}
+ .About6 h5{
+    padding-left:130px;
+    padding-top: 16px;
+ }
+.About6 p{
+    padding-left:30px;
+    padding-top: 6px;
+    width:22vw;
 }

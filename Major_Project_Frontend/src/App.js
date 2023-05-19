@@ -11,11 +11,13 @@ import Adminpanel from './component/Admin/adminpanel';
 import Forgot1 from './component/Forgotpassword/forgot1';
 import Registration from './component/Admin/registration';
 import Aboutpatient from './component/Patient/aboutpatient';
-
+//  import Treatedpatient from './component/PatientStatus/treatedpatient';
 import Newpatient from './component/Admin/Newpatient';
 import Oldpatient from './component/Admin/Oldpatient';
 
-import Upcomingpatient from './component/Doctor/Upcomingpatient';
+import Upcomingpatient from './component/PatientStatus/Upcomingpatient';
+
+import AddReport from './component/Admin/AddReport';
 // import Protected from './component/Protected/protected'
 import {
   BrowserRouter,
@@ -28,6 +30,7 @@ import { useSelector } from 'react-redux';
 import AddDoctor from './component/Admin/AddDoctor';
 import Updateprofile from './component/Admin/Updateprofile';
 import Updatepatient from './component/Patient/Updatepatient';
+import DisplayReport from './component/Patient/DisplayReport';
 
 const App =() =>{
 
@@ -59,6 +62,9 @@ const App =() =>{
         <Route exact path = '/new-patient' element = {<Newpatient/>}/>
         <Route exact path = '/old-patient' element = {<Oldpatient/>}/>
         <Route exact path = '/upcoming-patient' element={<Upcomingpatient/>}/>
+        <Route exact path = "/add-report" element={<AddReport/>}/>
+        <Route exact path='/show-report' element={<DisplayReport/>}/>
+        {/* <Route exact path = '/treated-patient' element={<Treatedpatient/>}/> */}
         </Routes>
         <Footer/>
         </BrowserRouter>

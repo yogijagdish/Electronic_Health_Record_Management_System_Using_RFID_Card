@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import './style.css'
-import mylogo from '../images/titleimg5.jpeg';
+import mylogo from '../images/logo.png';
 import { getToken } from '../../services/tokenService';
 
 import { useSelector } from 'react-redux';
@@ -19,7 +19,7 @@ const Navbar = () => {
       {/* about title of project */}
       <div className="haha0">
 
-        <img className='titleimg' src={mylogo}  width={70} height={40} alt="" />
+      <img className='titleimg' src={mylogo}  width={55} height={45} alt="" />
         <h3 className='titlename'>Smart Health Card </h3>
       </div>
         <div className='haha'>

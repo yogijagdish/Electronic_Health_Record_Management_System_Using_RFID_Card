@@ -22,10 +22,12 @@
     font-size:20px;
     font-weight: 600;
 }
-.nav a:hover{
-    color: aqua;
-    font-size: 19px;
+.nav a:focus{
+        color:greenyellow;
     }
+ .nav a:hover{
+    font-size:21px;
+ }
 .titlename{
     color: white;
     margin-top:0px;
@@ -36,9 +38,12 @@
 }
 .haha{
    margin-left:700px;
+   width:10vw;
+   display: flex;
 }
 .haha0{
     display: flex;
     margin-top: 20px;
     margin-left: 30px;
+    font-family: 'imprint-mt-shadow-regular';
 }

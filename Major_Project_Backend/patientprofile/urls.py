@@ -9,4 +9,6 @@ urlpatterns = [
     path('patient-status/<int:pk>',views.PatientStatusView.as_view()),
     path('create-status/',views.CreatePatientStatusView.as_view()),
     path('asign-doctor/',views.AsignDoctorView.as_view()),
+    path('add-report/',views.PatientReportView.as_view()),
+    path('show-report/',views.DisplayReportView.as_view()),
 ]

@@ -68,7 +68,7 @@ const Patientpanel = () => {
         <div className="doctorcard">
           <Link to = "/aboutpatient"> <Doctorcard picture = {R1} name = "About Patient"  /> </Link>
           <Link to = "/"> <Doctorcard picture = {A1} name = "Previous Reports" /> </Link>
-          <Link to = "/"> <Doctorcard picture = {I1}  name = "Latest Reports"/> </Link>
+          <Link to = "/show-report"> <Doctorcard picture = {I1}  name = "Latest Reports"/> </Link>
            
         </div>
 

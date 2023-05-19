@@ -3,7 +3,9 @@ from rest_framework.views import APIView
 
 from patientprofile import serializers
 from authentication.models import User
-from patientprofile.models import PatientInformation,PatientStatus
+from patientprofile.models import PatientInformation,PatientStatus,PatientReport
+
+from rest_framework.parsers import MultiPartParser,FormParser
 
 
 
@@ -89,4 +91,27 @@ class AsignDoctorView(APIView):
         serialzed_data = serializers.AsignDoctorSerializer(user,many=True)
         # serialzed_data.is_valid(raise_exception=True)
         return Response(serialzed_data.data)
+
+
+class PatientReportView(APIView):
+
+    # parser_classes = [MultiPartParser,FormParser]
+
+    def post(self,request,format=None):
+        serialized_data = serializers.PatientReportSerializer(data = request.data)
+        print(request.data)
+        serialized_data.is_valid(raise_exception=True)
+        serialized_data.save()
+        return Response({'msg':'Report added succesfully'})
+
+
+class DisplayReportView(APIView):
+    def get(self,request,format=None):
+        user = serial.UserProfileSerializer(request.user)
+        id = user.data['id']
+        print(user.data['id'])
+        data = PatientReport.objects.filter(user_id=id)
+        serialized_data = serializers.DisplayReportSerializer(data,many=True)
+        return Response(serialized_data.data)
+        
         

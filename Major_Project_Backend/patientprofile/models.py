@@ -31,3 +31,9 @@ class PatientStatus(models.Model):
     problem = models.CharField(max_length=400)
     doctor = models.IntegerField()
 
+class PatientReport(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    test = models.CharField(max_length=100)
+    date = models.DateTimeField(auto_now=True)
+    report = models.FileField(upload_to="report/")
+

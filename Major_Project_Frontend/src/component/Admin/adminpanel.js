@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
-import dprofile from "../images/dprofile1.jpeg";
+import dprofile from "../images/dprofile2.jpg";
 import Doctorcard from '../Doctor/doctorcard'
-import R1 from "../images/registration3.png";
-import A1 from "../images/adddoctor.png";
-import I1 from "../images/information1.png";
+import R1 from "../images/registration0.png";
+import A1 from "../images/adddoctor0.png";
+import I1 from "../images/information0.png";
 import { Link, NavLink } from "react-router-dom";
 import Logout from "../Logout";
 
@@ -37,7 +37,10 @@ const Adminpanel = () => {
         <h2>Welcome to Admin panel !!</h2>
       </div>
       <div className="Adminpanel2">
-        <img src={dprofile} alt="profilepic" />
+      <div className="aimg">
+
+         <img src={dprofile} alt="profilepic" />
+          </div>
 
         <div className="a234">
           <div className="Adminpanel3">
@@ -68,6 +71,7 @@ const Adminpanel = () => {
           <Link to = "/registration"> <Doctorcard picture = {R1} name = "New Registration"  /> </Link>
           <Link to = "/add-doctor"> <Doctorcard picture = {A1} name = "Add Doctor" /> </Link>
           <Link to = "/"> <Doctorcard picture = {I1}  name = "Information"/> </Link>
+          <Link to = "/add-report"> Add Report </Link>
            
         </div>
 

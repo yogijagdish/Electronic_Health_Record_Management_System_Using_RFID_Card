@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import dprofile from "../images/dprofile1.jpeg";
 import Doctorcard from './doctorcard'
-import T1 from "../images/treatedpatient1.png";
-import U1 from "../images/upcomingpatient.4png.png";
-import I1 from "../images/information1.png";
+import T1 from "../images/treatedpatient2.png";
+import U1 from "../images/upcomingpatient0.png";
+import I1 from "../images/information0.png";
 import { Link } from "react-router-dom";
 
 import { useUserProfileAPIQuery } from "../../services/datacommunication";
@@ -13,6 +13,8 @@ import Logout from "../Logout";
 import { getToken } from "../../services/tokenService";
 
 const Doctorpanel = () => {
+
+  // backend
 
   const {access_token} = getToken();
 
@@ -31,6 +33,8 @@ const Doctorpanel = () => {
     }
   },[data,isSuccess])
 
+  // backend
+
 
   return (
     <div className="Doctorpanel">
@@ -43,6 +47,7 @@ const Doctorpanel = () => {
         <div className="d234">
           <div className="Doctorpanel3">
             <p>
+              {/* backend data */}
               Name: {doctorInfo.name} <br/>
               Email ID: {doctorInfo.email} <br/>
               Date of Birth: {doctorInfo.date_of_birth}
@@ -65,13 +70,14 @@ const Doctorpanel = () => {
           </p>
         
         <div className="doctorcard">
-          <Link to = "/"> <Doctorcard picture = {T1} name = "Treated Patient"  /> </Link>
-          <Link to = "/upcoming-patient"> <Doctorcard picture = {U1} name = "Upcoming Patient" /> </Link>
+          <Link to = "/treated-patient"> <Doctorcard picture = {T1}/> </Link>
+          <Link to = "/upcoming-patient"> <Doctorcard picture = {U1} name = "Upcoming_Patient" /> </Link>
           <Link to = "/"> <Doctorcard picture = {I1}  name = "Information"/> </Link>
            
         </div>
 
         </div>
+        {/* backend data */}
         <div> <Logout/> </div>
       </div>
     </div>

@@ -1,5 +1,88 @@
 .Contactus{
-    background-image: url(/src/component/images/l3.png);
+    background-image: url(/src/component/images/darkbg.jpg);
     height:81vh;
+    background-size: cover;
 
+}
+.Contactus1{
+    background-color:white;
+    opacity: 90%;
+    height:70vh;
+    border-radius: 30px;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Contactus1 h1{
+ text-align: center;
+ color: #360F88;
+ padding-top: 40px;
+ font-weight: 700;
+ font-size:60px;
+ text-shadow: 2px 3px 1px rgba(19, 0, 0, 0.43);
+ letter-spacing: 2px;
+}
+.Contactus1 p{
+    text-align: center;
+    font-size: 22px;
+    padding-top: 15px;
+    letter-spacing: 1px;
+    color: #360F88;
+    font-weight: 500;
+}
+.Contactus2{
+    width:67vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    height: 25vh;
+    border-radius: 20px;
+    border: 4px solid #360F88;
+}
+.Contactus3 img{
+    width: 17vw;
+    margin-left: 120px;
+    margin-top: 20px;
+}
+.Contactus3 p{
+    text-align:center;
+    margin-top: -40px;
+    font-size: 18px;
+}
+.Contactus3{
+    width: 21vw;
+    margin-top: 40px
+}
+.Contactus345{
+    display: flex;
+}
+.Contactus4{
+    width: 21vw;
+    margin-top:45px
+}
+.Contactus4 img{
+    width: 2.5vw;
+    margin-left: 150px;
+    margin-top: 18px;
+}
+.Contactus4 p{
+    text-align:center;
+    margin-top: -4px;
+    margin-left: 40px;
+    font-size: 18px;
+}
+
+.Contactus5{
+    width: 21vw;
+    margin-top: 50px
+}
+.Contactus5 img{
+    width: 2vw;
+    margin-left: 150px;
+    margin-top: 8px;
+}
+.Contactus5 p{
+    text-align:center;
+    margin-top: -7px;
+    font-size: 18px;
 }

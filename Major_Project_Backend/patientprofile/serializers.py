@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from patientprofile.models import PatientInformation,PatientStatus
+from patientprofile.models import PatientInformation,PatientStatus,PatientReport
 
 from authentication.models import User
 
@@ -38,3 +38,15 @@ class AsignDoctorSerializer(serializers.ModelSerializer):
                 return attrs
 
 
+class PatientReportSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PatientReport
+        fields = ['user_id','test','report']
+        extra_kwargs = {
+            'user_id': {'source': 'user'},
+        }
+
+class DisplayReportSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PatientReport
+        fields = ['user_id','test','date','report']
