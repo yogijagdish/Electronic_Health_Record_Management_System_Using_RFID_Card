@@ -461,12 +461,12 @@ margin-left:200px;
  /* css for adddetails */
   .Adddetails{
    background-image: url(/src/component/images/l3.png);
-   height:81vh;
+   height:95vh;
   }
  .Adddetailsn1{
    background-color:white;
    opacity: 90%;
-   height:70vh;
+   height:78vh;
    border-radius: 30px;
    width: 80vw;
    margin-left: auto;
@@ -483,5 +483,13 @@ margin-left:200px;
 }
 .Adddetailsn34{
    display: flex;
+   margin-left: 130px;
+}
+.Adddetailsn5{
+   margin-left: 450px;
+   margin-top: 20px;
+}
+.Adddetailsn4{
+   margin-left: 200px;
 }
 

@@ -1,8 +1,47 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './style.css'
 import A1 from '../images/dprofile2.jpg'
 import { Link } from 'react-router-dom'
+
+import { usePatientDataAPIQuery } from '../../services/datacommunication'
+import { getToken } from '../../services/tokenService'
+import ImageComponent from './ImageComponent'
+
 const Viewdetails = () => {
+
+    const {access_token} = getToken();
+
+    const {data,isSuccess} = usePatientDataAPIQuery(access_token);
+
+    const [patientData, setPatientData] = useState({user_id:"",name:"",id_number:"",date_of_birth:"",phone_number:"",address:"",father_name:"",mother_name:"",citizenship_num:"",blood_group:"",email:"",photo:""})
+
+    useEffect(()=> {
+      if (data && isSuccess) {
+        setPatientData({
+          user_id: data.user_id,
+          name: data.name,
+          id_number: data.id_number,
+          date_of_birth: data.date_of_birth,
+          phone_number: data.phone_number,
+          address: data.address,
+          father_name: data.father_name,
+          mother_name: data.mother_name,
+          citizenship_num: data.citizenship_num,
+          blood_group: data.blood_group,
+          email: data.email,
+          photo: data.photo
+        });
+        console.log(data)
+      }
+  
+    },[data,isSuccess])
+  
+  
+    const baseUrl = 'http://127.0.0.1:8000'
+  
+    const imageUrl = baseUrl + patientData.photo
+
+
   return (
     <div className='Patientdetails'><br />
         <div className="Patientdetailsn1"><br /><br /><br />
@@ -20,24 +59,24 @@ const Viewdetails = () => {
                 <div className="Patientdetails456">
 
                 <div className="Patientdetailsn4">
-                  <img src={A1} alt="patient details" />
-                  <h5>Akash Sunar</h5>
+                  <ImageComponent imageUrl={imageUrl}/>
+                  <h5>{patientData.name}</h5>
                   </div>
 
                   <div className="Patientdetailsn5">
-                  <p>Name : Akash Sunar</p>
-                  <p>ID Number : 0291</p>
-                  <p>Date of birth : 2056-08-26</p>
-                  <p>Phone Number : 9867767616</p>
-                  <p>Address: lamachaure,pokhara</p>
+                  <p>Name : {patientData.name}</p>
+                  <p>ID Number : {patientData.id_number}</p>
+                  <p>Date of birth : {patientData.date_of_birth}</p>
+                  <p>Phone Number : {patientData.phone_number}</p>
+                  <p>Address: {patientData.address}</p>
                   </div>
 
                  <div className="Patientdetailsn6">
-                 <p>Father's Name : Ram Sunar</p>
-                  <p>Mother's Name : Sita Sunar</p>
-                  <p>Citizenship NO : 293894-293</p>
-                  <p>Blood Group : 0 positive</p>
-                  <p>Email : sunarakash9@gmail.com</p>
+                 <p>Father's Name : {patientData.father_name}</p>
+                  <p>Mother's Name : {patientData.mother_name}</p>
+                  <p>Citizenship NO : {patientData.citizenship_num}</p>
+                  <p>Blood Group : {patientData.blood_group}</p>
+                  <p>Email : {patientData.email}</p>
                  </div>
                
 

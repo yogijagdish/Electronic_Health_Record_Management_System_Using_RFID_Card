@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 
 from patientprofile import serializers
 from authentication.models import User
-from patientprofile.models import PatientInformation,PatientStatus,PatientReport
+from patientprofile.models import PatientInformationDetail,PatientStatus,PatientReport
 
 from rest_framework.parsers import MultiPartParser,FormParser
 
@@ -17,7 +17,7 @@ class PatientDataView(APIView):
         serializer = serial.UserProfileSerializer(request.user)
         id = serializer.data['id']
         print(serializer.data['id'])
-        patient = PatientInformation.objects.get(user_id = id)
+        patient = PatientInformationDetail.objects.get(user_id = id)
         patserial = serializers.PatientDataSerializer(patient)
         print(patserial.data)
         return Response(patserial.data)
@@ -34,11 +34,6 @@ class PatientDataView(APIView):
 
 class PatientUpdate(APIView):
     def post(self,request,format=None):
-        print('requst-data',request.data)
-        print(request.user)
-        input_data = request.data
-        input_data['user_id'] = request.user.id
-        print(input_data)
         serializer = serializers.PatientDataSerializer(data=request.data,context={'user':request.user})
         serializer.is_valid(raise_exception=True)
         serializer.save()

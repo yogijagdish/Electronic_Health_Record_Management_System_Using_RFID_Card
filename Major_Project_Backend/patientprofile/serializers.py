@@ -1,13 +1,13 @@
 from rest_framework import serializers
 
-from patientprofile.models import PatientInformation,PatientStatus,PatientReport
+from patientprofile.models import PatientInformationDetail,PatientStatus,PatientReport
 
 from authentication.models import User
 
 class PatientDataSerializer(serializers.ModelSerializer):
     class Meta:
-        model = PatientInformation
-        fields = ['user_id','patient_name','gender','permanent_address','chitizenship_num','father_name','mother_name']
+        model = PatientInformationDetail
+        fields = ['user_id','name','id_number','date_of_birth','phone_number','address','father_name','mother_name','citizenship_num','blood_group','email','photo']
         extra_kwargs = {
             'user_id': {'source': 'user'}
         }

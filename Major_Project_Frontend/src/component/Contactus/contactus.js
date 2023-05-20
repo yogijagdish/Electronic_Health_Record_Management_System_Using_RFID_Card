@@ -7,9 +7,8 @@ const contactus = () => {
   return (
     <div className='Contactus'><br /><br />
        <div className="Contactus1">
-         <h1>Contact us</h1>
-         <p>You can contact our team using 
-          one of the followig medium
+         <h1>Contact Us</h1>
+         <p>Have any questions? We'd love to hear from you. 
          </p>
          <div className="Contactus2">
          <div className="Contactus345">
@@ -21,11 +20,11 @@ const contactus = () => {
           </div>
           <div className="Contactus4">
            <img src={call} alt="gmail images" />
-           <p>9867767616</p>
+           <p>+977-9867767616</p>
           </div>
           <div className="Contactus5">
            <img src={location} alt="gmail images" />
-           <p>Lamachaure-16,Pokhara</p>
+           <p>Lamachaur-16, Pokhara</p>
           </div>
 
           </div>

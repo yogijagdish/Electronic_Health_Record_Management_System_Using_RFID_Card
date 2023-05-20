@@ -103,11 +103,11 @@ export const dataCommunicationApi = createApi({
       }
     }),
     updatePatientAPI: builder.mutation({
-      query: ( {userInfo, access_token} ) => {
+      query: ( {formDataToSend, access_token} ) => {
         return {
           url: 'patientprofile/patient-update/',
           method: 'POST',
-          body: userInfo,
+          body: formDataToSend,
           headers: {
             'authorization': `Bearer ${access_token}`
 

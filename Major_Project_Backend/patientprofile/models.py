@@ -12,6 +12,21 @@ class PatientInformation(models.Model):
     father_name = models.CharField(max_length=255)
     mother_name = models.CharField(max_length=255)
 
+class PatientInformationDetail(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
+    name = models.CharField(max_length=255)
+    id_number = models.CharField(max_length=255)
+    date_of_birth = models.DateField()
+    phone_number = models.CharField(max_length=20)
+    address = models.CharField(max_length=255)
+    father_name = models.CharField(max_length=255)
+    mother_name = models.CharField(max_length=255)
+    citizenship_num = models.CharField(max_length=30)
+    blood_group = models.CharField(max_length=10)
+    email = models.EmailField()
+    photo = models.ImageField(upload_to='images/')
+
+
 # class PatientReport(models.Model):
 #     user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
 #     test_name = models.CharField(max_length=255)

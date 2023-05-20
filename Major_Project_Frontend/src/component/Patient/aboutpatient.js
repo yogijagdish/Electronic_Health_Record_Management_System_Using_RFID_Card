@@ -12,22 +12,33 @@ const Aboutpatient = () => {
 
   const {data,isSuccess} = usePatientDataAPIQuery(access_token);
 
-  const [patientInfo,setPatientInfo] = useState({patient_name:"",gender:"",permanent_address:"",chitizenship_num:"",father_name:"",mother_name:""});
-
+  const [patientData, setPatientData] = useState({user_id:"",name:"",id_number:"",date_of_birth:"",phone_number:"",address:"",father_name:"",mother_name:"",citizenship_num:"",blood_group:"",email:"",photo:""})
 
   useEffect(()=> {
     if (data && isSuccess) {
-      setPatientInfo({
-        patient_name: data.patient_name,
-        gender: data.gender,
-        permanent_address: data.permanent_address,
-        chitizenship_num: data.chitizenship_num,
+      setPatientData({
+        user_id: data.user_id,
+        name: data.name,
+        id_number: data.id_number,
+        date_of_birth: data.date_of_birth,
+        phone_number: data.phone_number,
+        address: data.address,
         father_name: data.father_name,
-        mother_name: data.mother_name
-      })
+        mother_name: data.mother_name,
+        citizenship_num: data.citizenship_num,
+        blood_group: data.blood_group,
+        email: data.email,
+        photo: data.photo
+      });
+      console.log(data)
     }
 
   },[data,isSuccess])
+
+
+  const baseUrl = 'http://127.0.0.1:8000'
+
+  const imageUrl = baseUrl + patientData.photo
 
   
 
@@ -45,12 +56,7 @@ const Aboutpatient = () => {
          <div className="Aboutpatient3">
 
             Id Number : pas075bei022 <br />
-            Patient Name : {patientInfo.patient_name} <br />
-            Gender : {patientInfo.gender} <br />
-            Permanent Address : {patientInfo.permanent_address} <br />
-            Citizenship No : {patientInfo.chitizenship_num} <br />
-            Father's Name : {patientInfo.father_name} <br />
-            Mother's Name : {patientInfo.mother_name}
+
 
          </div>
 
