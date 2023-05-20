@@ -1,22 +1,50 @@
 import Table from 'react-bootstrap/Table';
 import { Link} from 'react-router-dom';
+
+import { useEffect } from 'react';
+
+import { getToken } from '../../services/tokenService';
+
+import { useTreatedPatientAPIQuery } from '../../services/datacommunication';
+
 // import { Checkmark } from 'react-checkmark'
 import './style.css'
 const Tableform = (props)=> {
+
+  let {access_token} = getToken();
+  const {data,error,isSuccess} = useTreatedPatientAPIQuery(access_token);
+
+  useEffect(()=> {
+    if (data && isSuccess) {
+      console.log(data)
+    }
+    else {
+      console.log(error)
+    }
+  },[data])
+
   return (
     <div className="Table">
     <Table striped bordered hover >
       <thead>
         <tr>
-          <th>S.N</th>
+        <th>User Id</th>
           <th>Patient Name</th>
-          <th>Patient Id</th>
-          <th>Address</th>
-          <th>View Details</th>
+          <th>Date of Birth</th>
+          <th>Problem</th>
         </tr>
       </thead>
       <tbody >
-        <tr>
+        
+      { data && isSuccess && data.map((item,index) => (
+          <tr key={index}>
+            <td> {item.patient.user_id} </td>
+            <td> {item.user.name} </td>
+            <td> {item.user.date_of_birth} </td>
+            <td> {item.patient.problem} </td>
+          </tr>
+      ))}
+        {/* <tr>
           <td>1</td>
           <td>Akash Sunar</td>
           <td>0291</td>
@@ -93,7 +121,7 @@ const Tableform = (props)=> {
           <td>
          <Link to= '/nischal0293'><button className="btn btn-transparent"> View Details</button></Link>
           </ td>
-        </tr>
+        </tr> */}
       </tbody>
     </Table>
           </div>

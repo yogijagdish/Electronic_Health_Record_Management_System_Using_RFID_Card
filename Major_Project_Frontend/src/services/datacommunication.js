@@ -158,6 +158,20 @@ export const dataCommunicationApi = createApi({
         }
       }
     }),
+    treatedPatientAPI: builder.query({
+      query: (access_token) =>  {
+        return{
+          url: 'doctorprofile/treated-patient/',
+          method:'GET',
+          headers: {
+            'content-type': 'application/json',
+            'authorization': `Bearer ${access_token}`
+          }
+        }
+
+      }
+    }),
+
 
     addReportAPI: builder.mutation({
       query: (data) => {
@@ -180,7 +194,20 @@ export const dataCommunicationApi = createApi({
           }
         }
       }
-    })
+    }),
+
+    updateStatusAPI: builder.mutation({
+      query: (data) => {
+        return {
+          url: 'patientprofile/update-status/',
+          method: 'PUT',
+          body: data,
+          headers: {
+            'content-type': 'application/json'
+          }
+        }
+      }
+    }),
 
     // registration of user api
     // imageUploadAPI: builder.mutation({
@@ -239,4 +266,6 @@ export const { useDoctorLoginAPIMutation,
               useCreateStatusAPIMutation,
               useUpcomingPatientAPIQuery,
               useAddReportAPIMutation,
-              useDisplayReportAPIQuery } = dataCommunicationApi
+              useDisplayReportAPIQuery,
+           useUpdateStatusAPIMutation,
+          useTreatedPatientAPIQuery} = dataCommunicationApi

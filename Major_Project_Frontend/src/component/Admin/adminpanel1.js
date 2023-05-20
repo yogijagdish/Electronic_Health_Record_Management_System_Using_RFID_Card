@@ -63,13 +63,8 @@ const Adminpanel = () => {
         </div>
         <div className="Adminpanel5">
           <p>
-            Hospitals complement and amplify the effectiveness of many other
-            parts of the health system, providing continuous availability of
-            services for acute and complex conditions. They concentrate scarce
-            resources within well-planned referral networks to respond
-            efficiently to population health needs. They are an essential
-            element of Universal Health Coverage (UHC) and will be critical to
-            meeting the Sustainable Development Goals (SDG).
+          Effortlessly Manage User Accounts, System Settings & Ensure Data Security & Privacy.
+          Create & Manage User Accounts, Configure System Settings, Monitor & Analyze System Activity, and Ensure Data Backup & Security.
           </p>
         
         <div className="admincard">

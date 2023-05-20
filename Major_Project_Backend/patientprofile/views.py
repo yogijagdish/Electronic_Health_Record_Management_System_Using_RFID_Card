@@ -74,6 +74,17 @@ class PatientStatusView(APIView):
         user.problem = problem
         user.save()
         return Response({'msg':'status changed successfully'})
+    
+class PatientChangeStatus(APIView):
+    def put(self,request,format=None):
+        input_data = request.data
+        user = PatientStatus.objects.get(pk=input_data['patient_id'])
+        print(user)
+        is_treated = input_data['is_treated']
+        user.is_treated = is_treated
+        user.save()
+
+        return Response({'msg':'Status Changed Successfully'})
 
 class CreatePatientStatusView(APIView):
     def post(self,request):

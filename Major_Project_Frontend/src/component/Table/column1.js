@@ -1,6 +1,7 @@
 import Table from 'react-bootstrap/Table';
 import { Checkmark } from 'react-checkmark'
 import './style.css'
+import Treatedbutton from '../PatientStatus/Treatedbutton';
 
 import { useEffect } from 'react';
 
@@ -51,7 +52,7 @@ const Tableform1 = (props)=> {
             <td> {item.user.date_of_birth} </td>
             <td> {item.patient.problem} </td>
             <td>
-         <button className="btn btn-transparent"><Checkmark size='30px' /></button>
+              <Treatedbutton patient = {item.patient.user_id}/>
          </td>
           </tr>
         ))}

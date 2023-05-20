@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useState } from "react";
 import { useAddReportAPIMutation } from "../../services/datacommunication";
-
+import Z1 from '../images/addreport1.png'
 import axios from "axios";
 
 export default function AddReport() {
@@ -94,6 +94,7 @@ export default function AddReport() {
             </div>
 
             <div className="Addreport3">
+              <img src={Z1} alt="addrereport imagaes" />
             <input type="file" name="report" id="report" className="mt-4 mb-6 text-black font-semibold" onChange={handleFileChange}/>
             </div>
             

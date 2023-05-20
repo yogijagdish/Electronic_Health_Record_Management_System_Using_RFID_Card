@@ -112,7 +112,7 @@
    color: black;
 }
 .btn1{
-   padding-top: 25px;
+   padding-top: 50px;
    margin-left: -100px;
    width: 90vw;
 }
@@ -447,8 +447,12 @@ margin-left:200px;
  padding-left:250px;
  padding-top:40px;
  }
+ .Addreport3 img{
+   height: 120px;
+   padding-left:0px;
+ }
  .Addreport4{
    width: 40vw;
    padding-left:250px;
-   margin: 110px;
+   margin:  80px 110px;
  }
