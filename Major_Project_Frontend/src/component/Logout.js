@@ -21,7 +21,7 @@ export default function Logout() {
     }
     return (
         <div className="grid place-content-center mt-52">
-        <button type="submit" className="bg-blue-700 w-20 border-2 rounded-lg h-8" onClick={handleClick}>Logout</button>
+        <button type="submit" className="text-white bg-red-600 hover:bg-grey-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" onClick={handleClick}>Logout</button>
         </div>
     )
 }

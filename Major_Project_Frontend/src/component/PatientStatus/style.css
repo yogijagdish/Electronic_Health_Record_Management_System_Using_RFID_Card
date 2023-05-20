@@ -9,9 +9,10 @@
     margin-left: auto;
     margin-right: auto;
 }
-.Treatedpatient1 h3{
+.Treatedpatient1 p{
     text-align: center;
     color:white;
+    font-size: 22px;
     font-weight: 640;
     padding-top: 7px;
 }

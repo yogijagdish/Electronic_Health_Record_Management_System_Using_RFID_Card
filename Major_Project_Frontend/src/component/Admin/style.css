@@ -2,17 +2,34 @@
     background-image: url(/src/component/images/l3.png);
     height:81vh;
 }
+.Adminlogin1{
+   height: 62vh;
+   width: 30vw;
+   background-color:white;
+   padding-top: 15px;
+   border-radius: 20px;
+   margin: auto;
+   border: 2px solid black;
+}
+.Adminlogin1 p{
+   font-size: 16px;
+   font-weight:500;
+   padding-top: 12px;
+   padding-bottom: 8px;
+}
+
 .Adminpanel{
     background-image: url(/src/component/images/l3.png);
     height:81vh;
 }
-.Adminpanel1 h2{
-    text-align: center;
-    padding-top: 20px;
-    font-weight:700;
+.Adminpanel1 p{
+   text-align: center;
+   font-size: 30px;
+   padding-top:15px;
+   font-weight:700;
 }
 .Adminpanel2{
-   height:70vh;
+   height:72vh;
    width: 88vw;
    background-color:white;
    margin-left: auto;
@@ -34,15 +51,17 @@
 .a234{
    display:flex;
 }
-.Adminpanel4 h2{
-   margin: -160px 200px;
+.Adminpanel4 p{
+   margin: -170px 200px;
    text-align: center;
+   font-size:30px;
    font-weight:700; 
+   letter-spacing: 1px;
    color:#1ca6f3;
 }
 .Adminpanel5{
    width: 50vw;
-   margin: -120px 200px;
+   margin: -155px 200px;
    margin-left: 350px;
 }
 .aimg img{
@@ -50,11 +69,19 @@
    border-radius: 10px;
 }
 .Adminpanel5 p{
+   font-size: 20px;
    color: black;
    font-weight: 500;
+   letter-spacing: 1px;
 
 }
 .doctorcard{
+   margin-left: -400px;
+   margin-top: 100px;
+   display: flex;
+   padding-left: 200px;
+}
+.admincard{
    margin-left: -400px;
    margin-top: 100px;
    display: flex;
@@ -79,9 +106,19 @@
    font-weight:700;
    margin-bottom:10px;
 }
-
-
-
+.aout{
+   margin:-256px -100px;
+   width: 55vw;
+   color: black;
+}
+.btn1{
+   padding-top: 25px;
+   margin-left: -100px;
+   width: 90vw;
+}
+.btn1 button{
+   margin-right:520px
+}
 
            /* css for new registration form */
 .Registration{
@@ -141,7 +178,7 @@ margin-left:200px;
 
  /* css for add doctor */
 
- .Adddoctor{
+ /* .Adddoctor{
    background-image: url(/src/component/images/l3.png);
     height:81vh;
 }
@@ -151,7 +188,7 @@ margin-left:200px;
    margin-right: auto;
    border-radius: 30px;
    padding-top:5vh;
-}
+} */
 
   .form-container {
    display: flex;
@@ -198,6 +235,29 @@ margin-left:200px;
    max-width: 400px;
    height: 100px;
    margin-bottom:25px;
+ }
+ .heading{
+   font-size: 25px;
+   font-weight: 700;
+   margin-left:210px;
+   padding-bottom: 10px;
+ }
+ .Registration0{
+   background-image: url(/src/component/images/bg.jpg);
+   height:120vh;
+   background-size: cover;
+   padding-top:1px;
+ }
+ .Registration{
+   margin-left:80px;
+   width: 60vw;
+ }
+ .button2{
+   margin-left: 130px;
+ }
+ .button2 text{
+   font-size: 22px;
+   font-weight: 700;
  }
 
   /* css for search doctor */
@@ -302,3 +362,93 @@ margin-left:200px;
    font-weight: 600;
    color: #360F88;
   }
+
+  /* css for adddoctor page */
+  .Adddoctor0{
+   background-image: url(/src/component/images/bg.jpg);
+   height:110vh;
+   background-size: cover;
+   padding-top: 1px;
+  }
+  .oo{
+   display: flex;
+  }
+  .form1{
+   height:78vh;
+  }
+
+  /* css for search button */
+
+  form.example input[type=text] {
+   padding: 10px;
+   font-size: 17px;
+   border: 1px solid grey;
+   float: left;
+   width:25%;
+   height:5vh;
+   background: #f1f1f1;
+ }
+ 
+ /* Style the submit button */
+ form.example button {
+   float: left;
+   width:10%;
+   padding: 10px;
+   background: #2196F3;
+   color: white;
+   height:5vh;
+   font-size: 17px;
+   border: 1px solid grey;
+   border-left: none; /* Prevent double borders */
+   cursor: pointer;
+ }
+ 
+ form.example button:hover {
+   background: #0b7dda;
+ }
+ 
+ /* Clear floats */
+ form.example::after {
+   content: "";
+   clear: both;
+   display: table;
+ }
+ .search1{
+   /* margin-left:20vw; */
+   padding-left: 400px;
+   padding-top: 15px;
+ }
+ .Addreport{
+   background-image: url(/src/component/images/bg.jpg);
+   height:85vh;
+   background-size: cover;
+ }
+ .Addreport1{
+   background-color:white;
+   width: 60vw;
+   height: 50vh;
+   border-radius:30px;
+   border: 2px solid black;
+   margin: auto;
+   box-shadow: 0px 5px 10px 0px rgba(0,255,255,0.7);   
+ }
+ .Addreport1:hover{
+  box-shadow: 0px 10px 20px 2px rgba(0,255,255,0.7);
+ }
+ .Addreport23{
+   display: flex;
+   
+ }
+ .Addreport2{
+   width: 19vw;
+   padding-top:30px;
+ }
+ .Addreport3{
+ padding-left:250px;
+ padding-top:40px;
+ }
+ .Addreport4{
+   width: 40vw;
+   padding-left:250px;
+   margin: 110px;
+ }

@@ -8,46 +8,43 @@ const about = () => {
   return (
     <div className="About">
       <div className="About1">
-        <h2>Our Moto</h2>
+        <span>Our Motto</span>
         <p>
           "Revolutionize your healthcare experience with a smart health card.
         </p>
         <p>Accessible, Paperless, Secure."</p>
       </div>
       <div className="About2">
-        <h2>Our Mission</h2>
+        <span>Our Mission</span>
         <p>
           {" "}
-          Our mission is to empower patients with a smart health card that
-          securely stores their medical history and enables seamless access to
-          medical records. By revolutionizing the healthcare experience, we aim
-          to improve patient outcomes and transform the healthcare industry.
+          To streamline the record management process, improves data accuracy, and enhance patient care.
         </p>
         <div className="About3456">
           <div className="About3">
             <img src={Convenience} alt="" />
-            <h5>Convenience</h5>
+            <div className="a1">Convenience</div>
             <p>
             With all medical records stored in one place, patients no longer have to keep track of paper documents
             </p>
           </div>
-          <div className="About3">
+          <div className="About4">
             <img src={Securestorage} alt="" />
-            <h5>Secure Storage</h5>
+            <div className="a1">Secure Storage</div>
             <p>
             The smart health card offers a secure way to store medical records and data cannot be modified or deleted
             </p>
           </div>
-          <div className="About3">
+          <div className="About5">
             <img src={Accessible} alt="" />
-            <h5>Accessible</h5>
+            <div className="a1">Accessible</div>
             <p>
             Patients can easily access their medical records anytime, anywhere, without the need for physical documents
             </p>
           </div>
           <div className="About6">
             <img src={Paperless} alt="" />
-            <h5>Paperless</h5>
+            <div className="a1">Paperless</div>
             <p>
             Presence of medical reports in digital from so it eliminates the paper related problems
             </p>

@@ -19,6 +19,12 @@
     font-weight: 500;
     margin-bottom:0px;
     letter-spacing: 1px;
+    margin-top: 4px;
+}
+.About span{
+     font-size: 30px;
+     font-weight: 700;
+    letter-spacing: 1px;
 }
 .About2{
     background-color: white;
@@ -33,9 +39,17 @@
     text-align: center;
 
 }
+.About2 span{
+    color:#1ca6f3;
+    letter-spacing:1px;
+    font-weight:700;
+    padding-left: 650px;
+    font-size: 33px;
+}
 .About2 p{
     width: 50vw;
      padding-left: 150px;
+     padding-top:5px;
      color: #757575;
      font-weight: 600;
      font-size:17px;
@@ -49,11 +63,41 @@
     padding: 40px 10px;
     
 }
+.About4{
+    height:30vh;
+    width: 25vw;
+    padding: 40px 10px;
+    
+}
+.About4 p{
+    padding-left:30px;
+    padding-top: 12px;
+    width:25vw;
+}
+.About4 img{
+    padding-left: 150px;
+}
+.About5{
+    height:30vh;
+    width: 25vw;
+    padding: 40px 10px;
+    
+}
+.About5 p{
+    padding-left:30px;
+    padding-top: 18px;
+    width:25vw;
+}
+.About5 img{
+    padding-left: 150px;
+}
 .About3 img{
     padding-left:150px;
 }
-.About3 h5{
+.a1{
     padding-left:130px;
+    font-size: 20px;
+    font-weight:600;
     padding-top: 10px;
 }
 .About3 p{
@@ -63,6 +107,7 @@
 }
 .About3456{
     display:flex;
+    padding-top: 30px;
 }
 .About6{
     height:30vh;
@@ -78,6 +123,6 @@
  }
 .About6 p{
     padding-left:30px;
-    padding-top: 6px;
+    padding-top: 25px;
     width:22vw;
 }

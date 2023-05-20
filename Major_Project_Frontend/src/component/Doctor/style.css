@@ -3,18 +3,36 @@
     height:81vh;
     background-size: cover;
 }
+.Doctorlogin1{
+    height: 59vh;
+    width: 30vw;
+    background-color:white;
+    padding-top: 15px;
+    border-radius: 20px;
+    margin: auto;
+    border: 2px solid black;
+}
+.Doctorlogin1 p{
+    font-size: 16px;
+    font-weight:500;
+    padding-top: 12px;
+    padding-bottom: 8px;
+}
 .Doctorpanel{
     background-image: url(/src/component/images/bg.jpg);
     height:81vh;
+    background-size: cover;
 }
-.Doctorpanel1 h2{
+.Doctorpanel1 p{
      text-align: center;
-     padding-top: 20px;
+     font-size: 30px;
+     padding-top:15px;
      font-weight:700;
 }
 .Doctorpanel2{
     height:70vh;
     width: 88vw;
+    margin-top:0px;
     background-color:white;
     margin-left: auto;
     margin-right: auto;
@@ -26,7 +44,12 @@
     width: 100px;
     margin: 30px 80px;
 }
+.himg1{
+    padding-top:1px;
+}
 .himg img{
+    width: 100px;
+    margin: 30px 90px;
     border: 2px solid black;
     border-radius: 10px;
 }
@@ -40,10 +63,12 @@
 .d234{
     display:flex;
 }
-.Doctorpanel4 h2{
-    margin: -160px 200px;
+.Doctorpanel4 p{
+    margin: -170px 200px;
     text-align: center;
+    font-size:30px;
     font-weight:700; 
+    letter-spacing: 1px;
     color:#1ca6f3;
 }
 .Doctorpanel5{
@@ -53,8 +78,14 @@
 }
 .Doctorpanel5 p{
     color:black;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
 
+}
+.out{
+    margin:-45px 35px;
+    color: black;
 }
 /* .doctorcard{
     margin-left: -400px;

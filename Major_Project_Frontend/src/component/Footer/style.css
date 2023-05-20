@@ -4,11 +4,13 @@
     color: white;
     text-align: center;
     display: flex;
-    padding-left: 260px;
+    padding-left: 330px;
 }
-.footer h4{
+.footer p{
     margin-left: 250px;
     margin-top: 20px;
+    font-size: 23px;
+    font-weight: 600;
 }
 svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
     color: white;

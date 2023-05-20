@@ -11,13 +11,16 @@ import Adminpanel from './component/Admin/adminpanel';
 import Forgot1 from './component/Forgotpassword/forgot1';
 import Registration from './component/Admin/registration';
 import Aboutpatient from './component/Patient/aboutpatient';
-//  import Treatedpatient from './component/PatientStatus/treatedpatient';
+import Treatedpatient from './component/PatientStatus/treatedpatient';
 import Newpatient from './component/Admin/Newpatient';
 import Oldpatient from './component/Admin/Oldpatient';
 
 import Upcomingpatient from './component/PatientStatus/Upcomingpatient';
-
+import Previousreport from './component/Patient/previousreport';
+import Latestreport from './component/Patient/latestreport';
 import AddReport from './component/Admin/AddReport';
+import Scancard from './component/Admin/Scancard';
+import Information from './component/Admin/information';
 // import Protected from './component/Protected/protected'
 import {
   BrowserRouter,
@@ -31,6 +34,7 @@ import AddDoctor from './component/Admin/AddDoctor';
 import Updateprofile from './component/Admin/Updateprofile';
 import Updatepatient from './component/Patient/Updatepatient';
 import DisplayReport from './component/Patient/DisplayReport';
+import Adminpanel1 from './component/Admin/adminpanel1';
 
 const App =() =>{
 
@@ -53,6 +57,7 @@ const App =() =>{
         <Route exact path="/doctorpanel" element = {access_token?<Doctorpanel/>:<Home/>}/>
         <Route exact path="/patientpanel" element = {<Patientpanel/>}/>
         <Route exact path="/adminpanel" element = {access_token?<Adminpanel/>:<Home/>}/>
+        <Route exact path="/adminpanel1" element = {access_token?<Adminpanel1/>:<Home/>}/>
         <Route exact path = '/forgot1' element = {<Forgot1/>}/>
         <Route exact path = '/registration' element = {<Registration/>}/>
         <Route exact path = '/aboutpatient' element = {<Aboutpatient/>}/>
@@ -64,7 +69,11 @@ const App =() =>{
         <Route exact path = '/upcoming-patient' element={<Upcomingpatient/>}/>
         <Route exact path = "/add-report" element={<AddReport/>}/>
         <Route exact path='/show-report' element={<DisplayReport/>}/>
-        {/* <Route exact path = '/treated-patient' element={<Treatedpatient/>}/> */}
+        <Route exact path='/treated-patient' element={<Treatedpatient/>}/>
+        <Route exact path='/previous-report' element={<Previousreport/>}/>
+        <Route exact path='/latest-report' element={<Latestreport/>}/>
+        <Route exact path='/scancard' element={<Scancard/>}/>
+        <Route exact path='/information' element={<Information/>}/>
         </Routes>
         <Footer/>
         </BrowserRouter>

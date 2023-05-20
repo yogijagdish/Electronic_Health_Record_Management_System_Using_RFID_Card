@@ -19,8 +19,8 @@ const Navbar = () => {
       {/* about title of project */}
       <div className="haha0">
 
-      <img className='titleimg' src={mylogo}  width={55} height={45} alt="" />
-        <h3 className='titlename'>Smart Health Card </h3>
+      <img className='titleimg' src={mylogo} alt="" />
+        <p className='titlename'>Smart Health Card </p>
       </div>
         <div className='haha'>
       <ul>
@@ -36,8 +36,8 @@ const Navbar = () => {
      <Link to="/about">About</Link>
      </li>
      {/* contact link */}
-     <li>
-     <Link to="/contactus">Contactus</Link>
+     <li style = {{width:'10vw'}}>
+     <Link to="/contactus">Contact Us</Link>
      </li>
       
       </ul>

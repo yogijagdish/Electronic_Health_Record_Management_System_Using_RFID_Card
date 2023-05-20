@@ -1,16 +1,16 @@
 import React from 'react'
-// import Tableform from '../Table/column';
+import Tableform from '../Table/column';
 import './style.css'
 const Treatedpatient = () => {
   return (
     <div className='Treatedpatient'>
       
       <div className='Treatedpatient1'>
-           <h3>
+           <p>
             Treated Patient list
-           </h3>
+           </p>
          </div>
-   {/* <Tableform/> */}
+   <Tableform/>
       </div>
   )
 }

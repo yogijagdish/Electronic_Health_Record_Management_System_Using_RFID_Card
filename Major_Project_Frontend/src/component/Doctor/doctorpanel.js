@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
-import dprofile from "../images/dprofile1.jpeg";
+import dprofile from "../images/dprofile2.jpg";
 import Doctorcard from './doctorcard'
 import T1 from "../images/treatedpatient2.png";
 import U1 from "../images/upcomingpatient0.png";
@@ -39,10 +39,15 @@ const Doctorpanel = () => {
   return (
     <div className="Doctorpanel">
       <div className="Doctorpanel1">
-        <h2>Welcome to Doctor panel !!</h2>
+        <p>Welcome to Doctor panel !!!</p>
       </div>
       <div className="Doctorpanel2">
+      <div className="himg">
+        <div className="himg1">
+
         <img src={dprofile} alt="profilepic" />
+        </div>
+        </div>
 
         <div className="d234">
           <div className="Doctorpanel3">
@@ -55,30 +60,25 @@ const Doctorpanel = () => {
           </div>
 
           <div className="Doctorpanel4">
-            <h2>Your Health, Our Happiness </h2>
+            <p>Your Health, Our Happiness </p>
           </div>
         </div>
         <div className="Doctorpanel5">
           <p>
-            Hospitals complement and amplify the effectiveness of many other
-            parts of the health system, providing continuous availability of
-            services for acute and complex conditions. They concentrate scarce
-            resources within well-planned referral networks to respond
-            efficiently to population health needs. They are an essential
-            element of Universal Health Coverage (UHC) and will be critical to
-            meeting the Sustainable Development Goals (SDG).
+           Empowering Doctors To Provide Exceptional Care & Manage Patient Information with Ease.
+           Manage Appointments, View & Update Patient Records, Prescribe Medications & Treatments, and Generate Medical Reports.
           </p>
         
         <div className="doctorcard">
           <Link to = "/treated-patient"> <Doctorcard picture = {T1}/> </Link>
           <Link to = "/upcoming-patient"> <Doctorcard picture = {U1} name = "Upcoming_Patient" /> </Link>
           <Link to = "/"> <Doctorcard picture = {I1}  name = "Information"/> </Link>
-           
+          <div className="out"><Logout/> </div>
         </div>
 
         </div>
         {/* backend data */}
-        <div> <Logout/> </div>
+       
       </div>
     </div>
   );

@@ -10,10 +10,6 @@
     margin: 25px ;
     list-style-type : none;  
 }
-/* .nav li{
-    background-color: white;
-    width:10px;
-} */
 .nav a{
     color:white;
     text-decoration: none;
@@ -23,7 +19,7 @@
     font-weight: 600;
 }
 .nav a:focus{
-        color:greenyellow;
+        color:cyan;
     }
  .nav a:hover{
     font-size:21px;
@@ -35,9 +31,11 @@
 .titleimg{
   margin-right:30px;
   margin-top: 0px;
+  width:55px;
+  height:45px;
 }
 .haha{
-   margin-left:700px;
+   margin-left:770px;
    width:10vw;
    display: flex;
 }
@@ -46,4 +44,7 @@
     margin-top: 20px;
     margin-left: 30px;
     font-family: 'imprint-mt-shadow-regular';
+}
+.haha0 p{
+    font-size: 27px;
 }

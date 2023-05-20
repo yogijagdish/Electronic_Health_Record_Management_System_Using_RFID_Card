@@ -70,22 +70,39 @@ export default function AddReport() {
     // }
 
     return(
-        <div>
-            <div>
-    <input type="text" name="query" id="query" placeholder="search ..." className="ml-32 h-8 w-64 border-2 rounded-lg" onChange={handleChange}/>
-    <button type="submit" className="text-sm ml-2 bg-blue-600 h-8 w-32 rounded-lg border-2" onClick={handleClick}> Search</button>
-    </div>
-
-        <form onSubmit={handleSubmit} className="grid place-content-center">
-
-            <label htmlFor="user" className="text-sm mt-6">User</label>
-            <input type="number" name="user_id" id="user_id" placeholder={users[0].id} className="border-2 rounded-lg mt-2 " onChange={handleInputChange}/>
-            <label htmlFor="test" className="text-sm mt-6">Test</label>
-            <input type="text" name="test" id="test" className="border-2 rounded-lg mt-2" onChange={handleInputChange}/>
-            <input type="file" name="report" id="report" className="mt-4 mb-6" onChange={handleFileChange}/>
-
-            <button type="submit"> Add Report </button>
+        <div className="Addreport">
+            <div className="search1">
+      <form class="example" action="action_page.php">
+      <input type="text" name="query" id="query" placeholder="search ..." className="form-control" onChange={handleChange}/>
+      <button type="submit" className=" ml-1 text-sm  bg-blue-600 h-8 w-32 rounded-lg border-2" onClick={handleClick}> <i class="fa fa-search"></i></button>
         </form>
+       </div><br /><br />
+            <div className="Addreport1">
+
+           
+        <form onSubmit={handleSubmit} className="grid place-content-center">
+          <div className="Addreport23">
+
+          
+           <div className="Addreport2">
+
+           
+            <label htmlFor="user" className="form-label">User</label>
+            <input type="number" name="user_id" id="user_id" placeholder={users[0].id} className="form-control" onChange={handleInputChange}/><br />
+            <label htmlFor="test" className="form-label">Test</label>
+            <input type="text" name="test" id="test" className="form-control" onChange={handleInputChange}/>
+            </div>
+
+            <div className="Addreport3">
+            <input type="file" name="report" id="report" className="mt-4 mb-6 text-black font-semibold" onChange={handleFileChange}/>
+            </div>
+            
+            </div>
+             <div className="Addreport4">
+            <button type="submit" className="btn btn-success bg-green-700">Upload <i class="fas fa-upload"></i></button>
+             </div>
+        </form>
+            </div>
         </div>
     )
 }

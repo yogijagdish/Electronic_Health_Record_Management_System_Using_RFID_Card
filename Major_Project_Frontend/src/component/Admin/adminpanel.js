@@ -10,7 +10,7 @@ import Logout from "../Logout";
 
 import { useUserProfileAPIQuery } from "../../services/datacommunication";
 import { getToken } from "../../services/tokenService";
-
+import { useNavigate } from "react-router-dom";
 const Adminpanel = () => {
 
   let {access_token} = getToken();
@@ -18,7 +18,10 @@ const Adminpanel = () => {
   const {data , isSuccess} = useUserProfileAPIQuery(access_token);
 
   const [adminInfo, setAdminInfo] = useState({email:"",name:"",date_of_birth:""})
-
+   const navigate = useNavigate();
+   const Nextclick = ()=>{
+    navigate('/adminpanel1')
+   }
   useEffect(()=>{
     if (data && isSuccess) {
       console.log(data)
@@ -34,13 +37,15 @@ const Adminpanel = () => {
   return (
     <div className="Adminpanel">
       <div className="Adminpanel1">
-        <h2>Welcome to Admin panel !!</h2>
+        <p>Welcome to Admin panel !!</p>
       </div>
       <div className="Adminpanel2">
-      <div className="aimg">
+      <div className="himg">
+        <div className="himg1">
 
-         <img src={dprofile} alt="profilepic" />
-          </div>
+        <img src={dprofile} alt="profilepic" />
+        </div>
+        </div>
 
         <div className="a234">
           <div className="Adminpanel3">
@@ -53,30 +58,31 @@ const Adminpanel = () => {
           </div>
 
           <div className="Adminpanel4">
-            <h2>Your Health, Our Happiness </h2>
+            <p>Your Health, Our Happiness </p>
           </div>
         </div>
         <div className="Adminpanel5">
           <p>
-            Hospitals complement and amplify the effectiveness of many other
-            parts of the health system, providing continuous availability of
-            services for acute and complex conditions. They concentrate scarce
-            resources within well-planned referral networks to respond
-            efficiently to population health needs. They are an essential
-            element of Universal Health Coverage (UHC) and will be critical to
-            meeting the Sustainable Development Goals (SDG).
+          Effortlessly Manage User Accounts, System Settings & Ensure Data Security & Privacy.
+          Create & Manage User Accounts, Configure System Settings, Monitor & Analyze System Activity, and Ensure Data Backup & Security.
           </p>
         
         <div className="doctorcard">
           <Link to = "/registration"> <Doctorcard picture = {R1} name = "New Registration"  /> </Link>
           <Link to = "/add-doctor"> <Doctorcard picture = {A1} name = "Add Doctor" /> </Link>
-          <Link to = "/"> <Doctorcard picture = {I1}  name = "Information"/> </Link>
-          <Link to = "/add-report"> Add Report </Link>
-           
-        </div>
+          <Link to = "/information"> <Doctorcard picture = {I1}  name = "Information"/> </Link>
 
         </div>
-      <div> <Logout/> </div>
+        <div className="btn1">
+        <button type="submit" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" disabled>&#8592; Previous</button>
+        <button type="submit" className="text-white bg-green-700 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" onClick={Nextclick}>Next &#8594;</button>
+        </div>
+          <div className="aout"> 
+          <Logout/> 
+          </div>
+
+        </div>
+      
       </div>
     </div>
   );

@@ -1,0 +1,94 @@
+import React, { useEffect, useState } from "react";
+import "./style.css";
+import dprofile from "../images/dprofile2.jpg";
+import Doctorcard from '../Doctor/doctorcard'
+import R1 from "../images/addreport0.png";
+import A1 from "../images/addinformation0.png";
+import I1 from "../images/information0.png";
+import { Link, NavLink } from "react-router-dom";
+import Logout from "../Logout";
+
+import { useUserProfileAPIQuery } from "../../services/datacommunication";
+import { getToken } from "../../services/tokenService";
+import { useNavigate } from "react-router-dom";
+const Adminpanel = () => {
+
+  let {access_token} = getToken();
+
+  const {data , isSuccess} = useUserProfileAPIQuery(access_token);
+
+  const [adminInfo, setAdminInfo] = useState({email:"",name:"",date_of_birth:""})
+   const navigate = useNavigate();
+   const Previousclick = ()=>{
+    navigate('/adminpanel')
+   }
+  useEffect(()=>{
+    if (data && isSuccess) {
+      console.log(data)
+      setAdminInfo({
+        email:data.email,
+        name: data.name,
+        date_of_birth: data.date_of_birth
+      })
+    }
+  },[data,isSuccess])
+
+
+  return (
+    <div className="Adminpanel">
+      <div className="Adminpanel1">
+        <p>Welcome to Admin panel !!</p>
+      </div>
+      <div className="Adminpanel2">
+      <div className="himg">
+        <div className="himg1">
+
+        <img src={dprofile} alt="profilepic" />
+        </div>
+        </div>
+
+        <div className="a234">
+          <div className="Adminpanel3">
+            <p>
+              Name: {adminInfo.name} <br/>
+              Email: {adminInfo.email} <br/>
+              Date of Birth: {adminInfo.date_of_birth}
+            </p>
+            <NavLink to="/update-profile" className="ml-4 text-sm text-blue-500"> Update Profile </NavLink>
+          </div>
+
+          <div className="Adminpanel4">
+            <p>Your Health, Our Happiness </p>
+          </div>
+        </div>
+        <div className="Adminpanel5">
+          <p>
+            Hospitals complement and amplify the effectiveness of many other
+            parts of the health system, providing continuous availability of
+            services for acute and complex conditions. They concentrate scarce
+            resources within well-planned referral networks to respond
+            efficiently to population health needs. They are an essential
+            element of Universal Health Coverage (UHC) and will be critical to
+            meeting the Sustainable Development Goals (SDG).
+          </p>
+        
+        <div className="admincard">
+          <Link to = "/add-report"> <Doctorcard picture = {R1} name = "Add report"  /> </Link>
+          <Link to = "/add-doctor"> <Doctorcard picture = {A1} name = "Add Doctor" /> </Link>
+        </div>
+        <div className="btn1">
+        <button type="submit" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" onClick={Previousclick}>&#8592; Previous</button>
+        <button type="submit" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" disabled>Next &#8594;</button>
+        </div>
+          <div className="aout"> 
+          <Logout/> 
+          </div>
+
+        </div>
+      
+      </div>
+    </div>
+  );
+};
+
+export default Adminpanel;

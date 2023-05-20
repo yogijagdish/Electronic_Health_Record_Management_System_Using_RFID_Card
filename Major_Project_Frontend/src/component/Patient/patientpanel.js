@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
-import dprofile from "../images/dprofile1.jpeg";
+import dprofile from "../images/dprofile2.jpg";
 import Doctorcard from '../Doctor/doctorcard'
-import R1 from "../images/registration3.png";
-import A1 from "../images/adddoctor.png";
-import I1 from "../images/information1.png";
+import R1 from "../images/previousreport0.png";
+import A1 from "../images/latestreport0.png";
+import I1 from "../images/information0.png";
 import { Link, NavLink } from "react-router-dom";
 
 
@@ -35,10 +35,15 @@ const Patientpanel = () => {
   return (
     <div className="Patientpanel">
       <div className="Patientpanel1">
-        <h2>Welcome to Patient panel !!</h2>
+        <p>Welcome to Patient panel !!</p>
       </div>
       <div className="Patientpanel2">
+      <div className="himg">
+        <div className="himg1">
+
         <img src={dprofile} alt="profilepic" />
+        </div>
+        </div>
 
         <div className="p234">
           <div className="Patientpanel3">
@@ -51,25 +56,20 @@ const Patientpanel = () => {
           </div>
 
           <div className="Patientpanel4">
-            <h2>Your Health, Our Happiness </h2>
+            <p>Your Health, Our Happiness </p>
           </div>
         </div>
         <div className="Patientpanel5">
           <p>
-            Hospitals complement and amplify the effectiveness of many other
-            parts of the health system, providing continuous availability of
-            services for acute and complex conditions. They concentrate scarce
-            resources within well-planned referral networks to respond
-            efficiently to population health needs. They are an essential
-            element of Universal Health Coverage (UHC) and will be critical to
-            meeting the Sustainable Development Goals (SDG).
+            Access your medical records, schedule appointments & stay connected with your health care providers.
+            View & update personal information, request appointments with doctors, access & download medical records, and communicate with Healthcare providers.
           </p>
         
         <div className="doctorcard">
-          <Link to = "/aboutpatient"> <Doctorcard picture = {R1} name = "About Patient"  /> </Link>
-          <Link to = "/"> <Doctorcard picture = {A1} name = "Previous Reports" /> </Link>
-          <Link to = "/show-report"> <Doctorcard picture = {I1}  name = "Latest Reports"/> </Link>
-           
+          <Link to = "/previous-report"> <Doctorcard picture = {R1} name = "Previous Reports" /> </Link>
+          <Link to = "/latest-report"> <Doctorcard picture = {A1}  name = "Latest Reports"/> </Link>
+          <Link to = "/aboutpatient"> <Doctorcard picture = {I1} name = "About Patient"  /> </Link>
+          <div className="out"><Logout/> </div>
         </div>
 
         <Logout/>

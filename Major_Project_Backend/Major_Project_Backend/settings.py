@@ -90,9 +90,9 @@ WSGI_APPLICATION = "Major_Project_Backend.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        'USER': 'jagdish',
-        'PASSWORD': 'Jagdish@1234',
-        'NAME': 'HospitalDatabase',
+        'USER': 'root',
+        'PASSWORD': '2058@123#',
+        'NAME': 'hospitalbackend',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -142,8 +142,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 ### cors allowed origin
 CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:3000",
     "http://127.0.0.1:3001",
-    "http://localhost:3001"
+    "http://127.0.0.1:3002",
+    "http://localhost:3001",
+    "http://localhost:3002",
+    "http://localhost:3003",
 ]
 
 AUTH_USER_MODEL = "authentication.User"
@@ -162,6 +166,6 @@ REST_FRAMEWORK = {
 
 ### settings of JWT... For more settings we can go to the documentation of jwt
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=20),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1)
 }
