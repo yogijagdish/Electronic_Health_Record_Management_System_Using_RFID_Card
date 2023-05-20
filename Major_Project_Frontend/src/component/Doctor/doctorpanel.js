@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import dprofile from "../images/dprofile2.jpg";
 import Doctorcard from './doctorcard'
+import D1 from "../images/dprofile.jpeg"
 import T1 from "../images/treatedpatient2.png";
 import U1 from "../images/upcomingpatient0.png";
 import I1 from "../images/information0.png";
@@ -10,11 +11,14 @@ import { Link } from "react-router-dom";
 import { useUserProfileAPIQuery } from "../../services/datacommunication";
 
 import Logout from "../Logout";
-import { getToken } from "../../services/tokenService";
 
+import { usePatientDataAPIQuery } from '../../services/datacommunication'
+import { getToken } from '../../services/tokenService'
+import ImageComponent from "../Patientdetails/ImageComponent";
 const Doctorpanel = () => {
 
   // backend
+
 
   const {access_token} = getToken();
 
@@ -44,8 +48,7 @@ const Doctorpanel = () => {
       <div className="Doctorpanel2">
       <div className="himg">
         <div className="himg1">
-
-        <img src={dprofile} alt="profilepic" />
+        <img src={D1} alt="dprofile" />
         </div>
         </div>
 
