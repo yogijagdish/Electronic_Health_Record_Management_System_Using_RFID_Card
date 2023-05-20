@@ -37,7 +37,7 @@ const Navbar = () => {
      </li>
      {/* contact link */}
      <li style = {{width:'10vw'}}>
-     <Link to="/contactus">Contact Us</Link>
+     <Link to="/contactus">Contact us</Link>
      </li>
       
       </ul>

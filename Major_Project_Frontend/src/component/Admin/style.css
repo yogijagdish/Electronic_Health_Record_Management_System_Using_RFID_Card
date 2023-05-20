@@ -456,3 +456,32 @@ margin-left:200px;
    padding-left:250px;
    margin:  80px 110px;
  }
+
+
+ /* css for adddetails */
+  .Adddetails{
+   background-image: url(/src/component/images/l3.png);
+   height:81vh;
+  }
+ .Adddetailsn1{
+   background-color:white;
+   opacity: 90%;
+   height:70vh;
+   border-radius: 30px;
+   width: 80vw;
+   margin-left: auto;
+   margin-right: auto;
+}
+.Adddetailsn2{
+   font-size: 25px;
+   font-weight: 700;
+   text-align: center;
+  padding-top: 6px;
+}
+.fox{
+   width:40vw;
+}
+.Adddetailsn34{
+   display: flex;
+}
+

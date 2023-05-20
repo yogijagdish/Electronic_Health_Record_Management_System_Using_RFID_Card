@@ -1,0 +1,143 @@
+.Patientdetails{
+    background-image: url(/src/component/images/l3.png);
+    height:81vh;
+    padding-top: 20px;
+  }
+  .Patientdetails1{
+    width: 50vw;
+    background-color:#F6E0F6;
+    opacity:80%;  
+    height: 77vh;
+    margin: auto;
+    border: 2px solid black;
+    border-radius:30PX
+
+  }
+  .Patientdetails1 h2{
+      color:black;
+      font-weight: 700;
+      text-align: center;
+      padding-top: 10px;
+  }
+  .Patientdetails2 img{
+    width:6vw;
+    margin: 10px 300px;
+    border: 2px solid black;
+    border-radius: 7px;
+  }
+  .Patientdetails3 {
+    color: black;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 10px 230px;
+    width: 30vw;
+  }
+  .managedetails{
+    display: flex;
+    padding-left: 100px;
+    padding-top: 20px;
+  }
+  .Patientdetails4{
+    background-color:#00BFFF;
+    height:5vh;
+    width: 12vw;
+    border:2px solid black;
+
+  }
+  .Patientdetails4 a{
+    font-size:18px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+  }
+
+  /* css foe nawaraj */
+
+  .Patientdetailsn1{
+    background-color:white;
+    opacity: 90%;
+    height:70vh;
+    border-radius: 30px;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Patientdetailsn2{
+  width:17vw;
+  border-right: 4px solid black;
+  height:50vh;
+  text-align: center;
+}
+.Patientdetailsn2 p{
+  font-size: 18px;
+  color:#360F88;
+  font-weight:600;
+  padding-top:120px;
+  margin-bottom:-100px;
+}
+.Patientdetailsn23{
+  display: flex;
+}
+.Patientdetailsn3 h4{
+  padding-left: 100px;
+  font-size: 25px;
+  margin-top: px;
+  color: black;
+  letter-spacing: 1px;
+  font-weight: 700
+
+}
+.Patientdetailsn4 img{
+  width:6vw;
+  border: 2px solid black;
+  border-radius:7px;
+  margin:50px;
+}
+.Patientdetailsn4 h5{
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  margin-left:40px;
+  letter-spacing: 1px;
+  margin-top:-40px;
+}
+.Patientdetails456{
+  display: flex;
+}
+.Patientdetailsn5{
+  margin: 40px 10px;
+  padding-left: 20px;
+}
+.Patientdetailsn5 p{
+  font-size: 17px;
+  color: black;
+  font-weight: 650;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #000;
+  letter-spacing: 1px;
+}
+.Patientdetailsn6 p{
+  font-size: 17px;
+  color: black;
+  font-weight: 650;
+  border-bottom: 2px solid #000;
+  letter-spacing: 1px;
+  padding-bottom: 15px;
+}
+
+.Patientdetailsn6{
+  margin: 40px 10px;
+  padding-left: 100px;
+}
+.Patientdetailsn7{
+  margin-top: 40px;
+  margin-right:60px;
+}
+.btn-primary{
+  margin-right:100px;
+}
+.Patientdetailsn7 p{
+  padding-left: 80px;
+  width:60vw;
+}

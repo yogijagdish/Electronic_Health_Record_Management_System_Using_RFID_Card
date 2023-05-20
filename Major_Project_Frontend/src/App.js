@@ -35,6 +35,8 @@ import Updateprofile from './component/Admin/Updateprofile';
 import Updatepatient from './component/Patient/Updatepatient';
 import DisplayReport from './component/Patient/DisplayReport';
 import Adminpanel1 from './component/Admin/adminpanel1';
+import Viewdetails from './component/Patientdetails/Viewdetails';
+import Adddetails from './component/Admin/Adddetails';
 
 const App =() =>{
 
@@ -74,6 +76,8 @@ const App =() =>{
         <Route exact path='/latest-report' element={<Latestreport/>}/>
         <Route exact path='/scancard' element={<Scancard/>}/>
         <Route exact path='/information' element={<Information/>}/>
+        <Route exact path='/viewdetails' element={<Viewdetails/>}/>
+        <Route exact path='/adddetails' element={<Adddetails/>}/>
         </Routes>
         <Footer/>
         </BrowserRouter>

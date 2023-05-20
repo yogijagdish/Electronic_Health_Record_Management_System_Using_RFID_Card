@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import dprofile from "../images/dprofile2.jpg";
 import Doctorcard from '../Doctor/doctorcard'
-import R1 from "../images/previousreport0.png";
+import R1 from "../images/viewdetails0.png";
 import A1 from "../images/latestreport0.png";
 import I1 from "../images/information0.png";
 import { Link, NavLink } from "react-router-dom";
@@ -66,14 +66,11 @@ const Patientpanel = () => {
           </p>
         
         <div className="doctorcard">
-          <Link to = "/previous-report"> <Doctorcard picture = {R1} name = "Previous Reports" /> </Link>
           <Link to = "/latest-report"> <Doctorcard picture = {A1}  name = "Latest Reports"/> </Link>
+          <Link to = "/viewdetails"> <Doctorcard picture = {R1} name = "view details" /> </Link>
           <Link to = "/aboutpatient"> <Doctorcard picture = {I1} name = "About Patient"  /> </Link>
           <div className="out"><Logout/> </div>
         </div>
-
-        <Logout/>
-
         </div>
       </div>
     </div>
