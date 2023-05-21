@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
- const Information =()=> {
+ const Information1 =()=> {
   return (
     <div className='Information'>
       <div className="Information1"><br /> <br />
@@ -50,4 +50,4 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
     </div>
   );
 }
-export default Information;
+export default Information1;

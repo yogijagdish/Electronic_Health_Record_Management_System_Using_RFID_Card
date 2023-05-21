@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
- const Information =()=> {
+ const Information2 =()=> {
   return (
     <div className='Information'>
       <div className="Information1"><br /> <br />
@@ -17,17 +17,13 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography> <p className='text-lg font-semibold text-cyan-300'>Dr.Akash Sunar will not be available from 4th jestha to 9th jestha.</p></Typography>
+          <Typography> <p className='text-lg font-semibold text-cyan-300'>Visiting request from a Patient.</p></Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          Dear nawaraj <br />
-          This is to notify you that doctor akash sunar, ENT specialist of out hospital
-          has gone out of town due to some personal work. <br />
-          He will  be away for the next 3-4 days.
-          As per his communication,he will inform us about his arrival after he 
-          returns to town. <br />
-          We request to all of you to cooperate us. Thank you.
+          Dear Dr.Akash Sunar <br />
+          This is to notify you that a patient hari poudel,whom you treated wants to meet you in 10 am of  9th jestha  <br />
+          Hope you will make time for this  follow up Thank you.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -50,4 +46,4 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
     </div>
   );
 }
-export default Information;
+export default Information2;

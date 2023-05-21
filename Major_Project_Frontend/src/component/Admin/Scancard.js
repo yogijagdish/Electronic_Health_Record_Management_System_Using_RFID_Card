@@ -8,7 +8,7 @@ import { usePatientLoginAPIMutation } from '../../services/datacommunication'
 import { storeToken } from '../../services/tokenService'
 
 import './style.css'
-import Scan from '../images/scan.png'
+import  scan from '../images/scan.png'
 const Scancard = () => {
 
     const [scannerData, setScannerData] = useState([]);
@@ -19,11 +19,11 @@ const Scancard = () => {
 
     const loginDetail1 = {email:"patient1@gmail.com",password:"abcd"}
 
-    const loginDetail2 = {email:"patient10@gmail.com",password:"abcd"}
+    const loginDetail2 = {email:"patient2@gmail.com",password:"abcd"}
 
-    const loginDetail3 = {email:"patient4@gmail.com",password:"abcd"}
+    const loginDetail3 = {email:"patient3@gmail.com",password:"abcd"}
 
-    const loginDetail4 = {email:"patient70@gmail.com",password:"abcd"}
+    const loginDetail4 = {email:"patient4@gmail.com",password:"abcd"}
 
     const login1 = async (e) => {
         const response = await patientLogin(loginDetail1)
@@ -81,7 +81,7 @@ const Scancard = () => {
     <div className='Scancard'><br /><br />
     <div className="Scancard1">
         <h3 className='text-2xl'>Scan your Card</h3>
-        <img src={Scan} alt="scan card" />
+        <img src={scan} alt="scan card" />
         <p>Place the RFID card above the RFID scanner and let 
             the scanner scan it properly.</p>
             <p>

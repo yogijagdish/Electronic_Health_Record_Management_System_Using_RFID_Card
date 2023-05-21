@@ -10,6 +10,8 @@ export default function AddReport() {
 
     axios.defaults.baseURL = 'http://127.0.0.1:8000/patientprofile'
 
+    const [uploadStatus,setUploadStatus] = useState({status:""})
+
     
     const [addReport,{isLoading}] = useAddReportAPIMutation();
 
@@ -58,6 +60,12 @@ export default function AddReport() {
         formDataToSend.append('report',formData.report)
 
         const response = await addReport(formDataToSend)
+        if (response.data) {
+          setUploadStatus({status:"Report Added Successfully"}) 
+          }
+        if (response.error) {
+          setUploadStatus({status:"Sorry!!! server Error"})
+        }
         console.log(response)
     }
 
@@ -101,6 +109,7 @@ export default function AddReport() {
             </div>
              <div className="Addreport4">
             <button type="submit" className="btn btn-success bg-green-700">Upload <i class="fas fa-upload"></i></button>
+            <p className="text-black-500 my-2"> {uploadStatus.status} </p>
              </div>
         </form>
             </div>

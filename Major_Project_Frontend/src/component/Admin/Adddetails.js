@@ -19,6 +19,7 @@ const Adddetails = () => {
   const [query, setQuery] = useState('');
 
   const [users,setUsers] = useState([0]);
+  const[submitStatus,setSubmitStatus] = useState({status:""})
 
   
   const handleSearchChange = (e) => {
@@ -77,6 +78,10 @@ const Adddetails = () => {
     const response = await updatePatient({formDataToSend,access_token});
     if (response.data) {
       setSuccess({msg:response.data})
+      setSubmitStatus({status:"Data added successfully"})
+    }
+    if (response.error) {
+      setSubmitStatus({status:"Sorry!!! Error Occured"})
     }
     console.log(response)
     
@@ -186,6 +191,7 @@ const Adddetails = () => {
 
              <input type="file" name="photo" id="photo" className="mt-4 mb-6 text-black font-semibold" onChange={handlePhotoData}/>
             <button type="submit" className='btn btn-success bg-green-600'> Submit </button>
+            <p className='text-black-500'>{submitStatus.status}</p>
             {/* <p className='text-green-500'>{success.msg}</p> */}
                 </div>
         </form>

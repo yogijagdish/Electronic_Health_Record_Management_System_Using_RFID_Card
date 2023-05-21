@@ -75,7 +75,7 @@ const Doctorpanel = () => {
         <div className="doctorcard">
           <Link to = "/treated-patient"> <Doctorcard picture = {T1}/> </Link>
           <Link to = "/upcoming-patient"> <Doctorcard picture = {U1} name = "Upcoming_Patient" /> </Link>
-          <Link to = "/"> <Doctorcard picture = {I1}  name = "Information"/> </Link>
+          <Link to = "/information2"> <Doctorcard picture = {I1}  name = "Information"/> </Link>
           <div className="out"><Logout/> </div>
         </div>
 

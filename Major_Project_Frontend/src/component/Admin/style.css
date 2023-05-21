@@ -426,7 +426,7 @@ margin-left:200px;
  .Addreport1{
    background-color:white;
    width: 60vw;
-   height: 50vh;
+   height:55vh;
    border-radius:30px;
    border: 2px solid black;
    margin: auto;
@@ -466,7 +466,7 @@ margin-left:200px;
  .Adddetailsn1{
    background-color:white;
    opacity: 90%;
-   height:78vh;
+   height:81vh;
    border-radius: 30px;
    width: 80vw;
    margin-left: auto;
@@ -492,4 +492,7 @@ margin-left:200px;
 .Adddetailsn4{
    margin-left: 200px;
 }
-
+.Information{
+   background-image: url(/src/component/images/l3.png);
+   height:95vh;
+}

@@ -94,7 +94,7 @@ const imageUrl = baseUrl + patientInfo.photo
         <div className="doctorcard">
           <Link to = "/latest-report"> <Doctorcard picture = {A1}  name = "Latest Reports"/> </Link>
           <Link to = "/viewdetails"> <Doctorcard picture = {R1} name = "view details" /> </Link>
-          <Link to = "/aboutpatient"> <Doctorcard picture = {I1} name = "About Patient"  /> </Link>
+          <Link to = "/information1"> <Doctorcard picture = {I1} name = "About Patient"  /> </Link>
           <div className="out"><Logout/> </div>
         </div>
         </div>

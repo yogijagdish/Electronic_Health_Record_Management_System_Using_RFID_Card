@@ -21,6 +21,7 @@ import Latestreport from './component/Patient/latestreport';
 import AddReport from './component/Admin/AddReport';
 import Scancard from './component/Admin/Scancard';
 import Information from './component/Admin/information';
+import Information1 from './component/Patient/Information';
 // import Protected from './component/Protected/protected'
 import {
   BrowserRouter,
@@ -37,6 +38,7 @@ import DisplayReport from './component/Patient/DisplayReport';
 import Adminpanel1 from './component/Admin/adminpanel1';
 import Viewdetails from './component/Patientdetails/Viewdetails';
 import Adddetails from './component/Admin/Adddetails';
+import Information2 from './component/Doctor/Information2';
 
 const App =() =>{
 
@@ -78,6 +80,8 @@ const App =() =>{
         <Route exact path='/information' element={<Information/>}/>
         <Route exact path='/viewdetails' element={<Viewdetails/>}/>
         <Route exact path='/adddetails' element={<Adddetails/>}/>
+        <Route exact path='/information1' element={<Information1/>}/>
+        <Route exact path='/information2' element={<Information2/>}/>
         </Routes>
         <Footer/>
         </BrowserRouter>

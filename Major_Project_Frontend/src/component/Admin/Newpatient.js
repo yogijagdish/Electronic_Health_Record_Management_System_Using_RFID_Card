@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 
 export default function Registration() {
 
+ const [serverstatus,setServerstatus] = useState({status:"",doctor:""})
 
   const [data,setData] = useState({user_id:"",is_available:"",is_treated:"",problem:"",doctor:""})
 
@@ -58,6 +59,7 @@ export default function Registration() {
         const response = await axios.get('/asign-doctor/');
         setDoctor(response.data)
         console.log(doctor);
+        setServerstatus({doctor:"There are the available Doctor: "})
     }
     catch (error) {
         console.log(error);
@@ -81,6 +83,7 @@ const handleClickpatient = async (e) => {
 
   const response = await createStatus(data);
   console.log(response)
+  setServerstatus({status:"User Added Successfully"})
 }
 console.log(data);
 }
@@ -173,6 +176,7 @@ console.log(data);
         <button type="submit" onClick={searchDoctor} className="bg-green-800 btn btn-success" >
           Search For Doctor
         </button>
+        <p className="text-black-500">{serverstatus.doctor}</p>
       </div>
       <ul>
                {doctor.map((array) => (
@@ -183,6 +187,7 @@ console.log(data);
         </ul>
 
         <button type="submit" className="bg-green-800 btn btn-success ml-60" onClick={handleClickpatient}> Add Patient </button>
+        <p className="text-black-500">{serverstatus.status}</p>
     </div>
   </div>
 

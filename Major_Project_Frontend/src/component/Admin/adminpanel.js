@@ -70,7 +70,7 @@ const Adminpanel = () => {
         <div className="doctorcard">
           <Link to = "/registration"> <Doctorcard picture = {R1} name = "New Registration"  /> </Link>
           <Link to = "/add-doctor"> <Doctorcard picture = {A1} name = "Add Doctor" /> </Link>
-          <Link to = "/information"> <Doctorcard picture = {I1}  name = "Information"/> </Link>
+          <Link to = "/adminpanel"> <Doctorcard picture = {I1}  name = "Information"/> </Link>
 
         </div>
         <div className="btn1">

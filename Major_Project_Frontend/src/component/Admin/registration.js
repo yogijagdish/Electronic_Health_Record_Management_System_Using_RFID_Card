@@ -15,6 +15,8 @@ export default function Registration() {
 
   const [doctor,setDoctor] = useState([0]);
 
+  const [searchAvailableDoctor, setSearchAvailableDoctor] = useState({doctor:"",clickDisplay:""});
+
   const [getid,setGetid] = useState();
 
 
@@ -41,6 +43,7 @@ export default function Registration() {
       const response = await axios.get(`/search/?q=${query}`);
       setUsers(response.data)
       console.log(users[0].id)
+  
     }
     catch (error) {
       console.log("this is error");
@@ -54,6 +57,7 @@ export default function Registration() {
         const response = await axios.get('/asign-doctor/');
         setDoctor(response.data)
         console.log(doctor);
+        setSearchAvailableDoctor({doctor:"These are the available doctors:"})
     }
     catch (error) {
         console.log(error);
@@ -77,6 +81,8 @@ const handleClickpatient = async (e) => {
   const id = users[0].id
   const response = await user({data,id})
   console.log(response)
+  setSearchAvailableDoctor({clickDisplay:"User Added Successfully"})
+
 }
 console.log(data);
 
@@ -171,6 +177,7 @@ console.log(data);
         <button type="submit" onClick={searchDoctor} className="bg-green-800 btn btn-success" >
           Search For Doctor
         </button>
+        <p className="text-black-500 my-2 text-lg "> {searchAvailableDoctor.doctor}</p>
       </div>
       <ul>
                {doctor.map((array) => (
@@ -181,6 +188,7 @@ console.log(data);
         </ul>
 
         <button type="submit" className="bg-green-800 btn btn-success ml-60" onClick={handleClickpatient}> Add Patient </button>
+        <p className="text-black-500 ml-32 my-4"> {searchAvailableDoctor.clickDisplay} </p>
     </div>
     {/* for scanning */}
     <div className="button2">
