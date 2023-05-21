@@ -26,12 +26,12 @@ margin-left:20px;
 .Table button{
     margin-left:-30px;
     color: #eee;
-    border: 2px solid green;
+    border: 2px solid whitesmoke;
     color:black;
 }
 .Table button:hover {
-    border: 2px solid blue;
-    color:blue;
+    border: 2px solid green;
+    color:white;
   }
   .Table p{
     width:30px;
@@ -45,6 +45,6 @@ margin-left:20px;
   .Table td i{
     margin-left:-20px;
     width:7vw;
-    height:3.5vh;
+    height:3vh;
     color: black;
 }

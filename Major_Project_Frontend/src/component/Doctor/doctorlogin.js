@@ -68,7 +68,7 @@ const Doctorlog = () => {
  
     <div className='grid place-content-center'>
 
-      <h1 className='text-4xl ml-10 font-semibold '>Doctor Login-Page !!! </h1>
+      <h1 className='text-4xl ml-10 font-semibold '>Doctor Login !!! </h1>
        
       {/* for email field */}
       <p htmlFor='email' className='formlabel' >Email Address </p>

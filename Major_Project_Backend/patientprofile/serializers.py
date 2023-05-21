@@ -50,3 +50,10 @@ class DisplayReportSerializer(serializers.ModelSerializer):
     class Meta:
         model = PatientReport
         fields = ['user_id','test','date','report']
+
+
+class ShowPhotoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PatientInformationDetail
+        fields = ['user_id','name','email','phone_number','photo']
+        

@@ -13,7 +13,7 @@ const ReportDownload = ({reporturl}) => {
     };
     return(
         <div>
-            <button onClick={handleDownload}> Download Report</button>
+            <button onClick={handleDownload} className="btn btn-transparent"><i class="fas fa-download fa-lg"></i></button>
         </div>
     )
 }

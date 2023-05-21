@@ -7,28 +7,54 @@ import A1 from "../images/latestreport0.png";
 import I1 from "../images/information0.png";
 import { Link, NavLink } from "react-router-dom";
 
+import { useShowPhotoAPIQuery } from "../../services/datacommunication";
+
 
 import Logout from "../Logout"
 import { getToken } from "../../services/tokenService";
 import { useUserProfileAPIQuery } from "../../services/datacommunication";
+import ImageComponent from "../Patientdetails/ImageComponent";
 const Patientpanel = () => {
 
   const {access_token} = getToken();
 
-  const {data, isSuccess} = useUserProfileAPIQuery(access_token);
+  // const {data, isSuccess} = useUserProfileAPIQuery(access_token);
 
-  const [patientInfo, setPatientInfo] = useState({email:"",name:"",date_of_birth:"",is_patient:""});
+  const {data,error,isSuccess} = useShowPhotoAPIQuery(access_token);
+  const [patientInfo, setPatientInfo] = useState({user_id:"",name:"",email:"",phone_number:"",photo:""});
 
+
+  
+  // useEffect(()=>{
+  //   if (data && isSuccess){
+  //     setPatientInfo({
+  //       email: data.email,
+  //       name: data.name,
+  //       date_of_birth: data.date_of_birth,
+  //       is_patient: data.is_patient
+  //     })
+  //   }
+  // },[data,isSuccess])
+  
   useEffect(()=>{
-    if (data && isSuccess){
-    setPatientInfo({
-      email: data.email,
-      name: data.name,
-      date_of_birth: data.date_of_birth,
-      is_patient: data.is_patient
-    })
+    if(data && isSuccess) {
+      const arrayData = data[0]
+      console.log(arrayData)
+      setPatientInfo({
+        user_id: arrayData.user_id,
+        name: arrayData.name,
+        email: arrayData.email,
+        phone_number: arrayData.phone_number,
+        photo: arrayData.photo
+      })
+    }
+    else {
+      console.log(error)
     }
   },[data,isSuccess])
+
+  const baseUrl = 'http://127.0.0.1:8000'
+const imageUrl = baseUrl + patientInfo.photo
 
 
 
@@ -41,7 +67,7 @@ const Patientpanel = () => {
       <div className="himg">
         <div className="himg1">
 
-        <img src={dprofile} alt="profilepic" />
+        <ImageComponent imageUrl={imageUrl} />
         </div>
         </div>
 
@@ -50,7 +76,7 @@ const Patientpanel = () => {
             <p>
               Name: {patientInfo.name} <br/>
               Email ID: {patientInfo.email} <br/>
-              Date of Birth: {patientInfo.date_of_birth}
+              Phone Number: {patientInfo.phone_number}
             </p>
               <NavLink to="/update-patient" className="text-blue-500"> Update Patient </NavLink>
           </div>

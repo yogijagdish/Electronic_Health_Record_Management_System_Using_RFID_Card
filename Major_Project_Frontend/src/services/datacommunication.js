@@ -73,6 +73,17 @@ export const dataCommunicationApi = createApi({
         }
       }
     }),
+    showPhotoAPI: builder.query({
+      query: (access_token) => {
+        return {
+          url: 'patientprofile/show-photo/',
+          method: 'GET',
+          headers: {
+            'authorization': `Bearer ${access_token}`
+          }
+        }
+      }
+    }),
     // user data
     // userDataAPI: builder.query({
     //   query: (access_token) => {
@@ -208,6 +219,7 @@ export const dataCommunicationApi = createApi({
         }
       }
     }),
+    
 
     // registration of user api
     // imageUploadAPI: builder.mutation({
@@ -268,4 +280,5 @@ export const { useDoctorLoginAPIMutation,
               useAddReportAPIMutation,
               useDisplayReportAPIQuery,
            useUpdateStatusAPIMutation,
-          useTreatedPatientAPIQuery} = dataCommunicationApi
+          useTreatedPatientAPIQuery,
+        useShowPhotoAPIQuery} = dataCommunicationApi

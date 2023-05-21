@@ -3,7 +3,7 @@ from patientprofile.models import PatientInformationDetail,PatientStatus,Patient
 
 # Register your models here.
 class PatientInformationAdmin(admin.ModelAdmin):
-    list_display = ['name','father_name','mother_name','photo']
+    list_display = ['user_id','name','photo']
 
 class PatientStatusAdmin(admin.ModelAdmin):
     list_display = ['user_id','is_available','is_treated','problem','doctor']

@@ -119,5 +119,13 @@ class DisplayReportView(APIView):
         data = PatientReport.objects.filter(user_id=id)
         serialized_data = serializers.DisplayReportSerializer(data,many=True)
         return Response(serialized_data.data)
-        
+    
+class ShowPhoto(APIView):
+    def get(self,request,format=None):
+        print(request.user)
+        user = serial.UserProfileSerializer(request.user)
+        print(user.data['id'])
+        data = PatientInformationDetail.objects.filter(pk=user.data['id'])
+        serializer = serializers.ShowPhotoSerializer(data,many=True)
+        return Response(serializer.data)        
         

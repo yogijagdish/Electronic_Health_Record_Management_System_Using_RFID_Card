@@ -12,4 +12,5 @@ urlpatterns = [
     path('add-report/',views.PatientReportView.as_view()),
     path('show-report/',views.DisplayReportView.as_view()),
     path('update-status/',views.PatientChangeStatus.as_view()),
+    path('show-photo/',views.ShowPhoto.as_view()),
 ]

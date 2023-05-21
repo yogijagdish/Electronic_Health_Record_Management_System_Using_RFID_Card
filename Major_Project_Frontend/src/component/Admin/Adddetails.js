@@ -13,6 +13,8 @@ const Adddetails = () => {
 
   const [updatePatient, {isLoading}] = useUpdatePatientAPIMutation();
 
+  const [success,setSuccess] = useState({msg:""})
+
   
   const [query, setQuery] = useState('');
 
@@ -73,6 +75,9 @@ const Adddetails = () => {
     console.log(formDataToSend)
 
     const response = await updatePatient({formDataToSend,access_token});
+    if (response.data) {
+      setSuccess({msg:response.data})
+    }
     console.log(response)
     
 }
@@ -181,6 +186,7 @@ const Adddetails = () => {
 
              <input type="file" name="photo" id="photo" className="mt-4 mb-6 text-black font-semibold" onChange={handlePhotoData}/>
             <button type="submit" className='btn btn-success bg-green-600'> Submit </button>
+            {/* <p className='text-green-500'>{success.msg}</p> */}
                 </div>
         </form>
                 

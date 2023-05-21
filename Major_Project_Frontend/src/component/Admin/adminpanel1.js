@@ -3,7 +3,7 @@ import "./style.css";
 import dprofile from "../images/dprofile2.jpg";
 import Doctorcard from '../Doctor/doctorcard'
 import R1 from "../images/addreport0.png";
-import A1 from "../images/addinformation0.png";
+import A1 from "../images/adddetails.png";
 import I1 from "../images/information0.png";
 import { Link, NavLink } from "react-router-dom";
 import Logout from "../Logout";
